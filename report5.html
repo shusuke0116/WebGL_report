@@ -7,7 +7,6 @@
 <body>
  <h1>板ポリにテクスチャ―</h1>
  板ポリにテクスチャ―貼ってみた<br>
- 非透過と透過
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -55,20 +54,21 @@
 
         // 木をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img/ganba.png");
+        var texture = textureLoader.load("img/star.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
+　　　　
+        //星をループで生成
+        for (let i = 0; i < 20; i++) {
+           const sprite = new THREE.Sprite(material);
+           // ランダムな座標に配置
+           sprite.position.x = 2 * (Math.random() - 0.5);
+           sprite.position.y = 0.5 * Math.random();
+           sprite.position.z = 2 * (Math.random() - 0.5);
+           // スケールを調整
+           sprite.scale.set(0.5, 0.5, 0.5);
 
-        // 木左
-        const sprite1 = new THREE.Sprite(material);
-        sprite1.scale.set(1,2,1);
-        sprite1.position.set(-1,1,0); //位置を指定
-        scene.add(sprite1);
-
-        // 木右
-        const sprite2 = new THREE.Sprite(material);
-        sprite2.scale.set(1,2,1);
-        sprite2.position.set(1,1,0); //位置を指定
-        scene.add(sprite2);
+           scene.add(sprite);
+        }
         
         update();
 
