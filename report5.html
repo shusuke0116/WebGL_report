@@ -54,8 +54,14 @@
         scene.add(axisHelper);
         */
         
+        // テクスチャー読み込み
+        var textureLoader1 = new THREE.TextureLoader();
+        var texture1 = textureLoader1.load("stone.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture1;
+        
         //バンプマップ
-        var bump = textureLoader.load("stone-bump.jpg");
+        var bump = textureLoader1.load("stone-bump.jpg");
         mat.bumpMap = bump;
         mat.bumpscale = 0.2;
         
@@ -66,9 +72,9 @@
         scene.add(Sphere);
 
         // 星をスプライトで作成
-        var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img/star.png");
-        const material = new THREE.SpriteMaterial({ map: texture,});
+        var textureLoader2 = new THREE.TextureLoader();  
+        var texture2 = textureLoader2.load("img/star.png");
+        const material = new THREE.SpriteMaterial({ map: texture2,});
 　　　　
         //星をループで生成
         for (let i = 0; i < 30; i++) {
