@@ -54,12 +54,16 @@
         scene.add(axisHelper);
         */
         
+        //バンプマップ
+        var bump = textureLoader.load("stone-bump.jpg");
+        mat.bumpMap = bump;
+        mat.bumpscale = 0.2;
+        
         //球
-        var sphereGeometry = new THREE.SphereGeometry(0.5,32,32); 
-        var sphereMaterial = new THREE. MeshLambertMaterial({color:0xff6600});
-        var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
-        sphere.position.set(0,0,0);
-        scene.add(sphere)
+        var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
+        var Sphere = new THREE.Mesh(geometry2, mat);
+        Sphere.position.set(0,0,0);
+        scene.add(Sphere);
 
         // 星をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
