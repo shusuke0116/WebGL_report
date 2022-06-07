@@ -21,7 +21,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xffffff);
+        renderer.setClearColor(0xffff00);
 
 
         // シーンを作成
@@ -58,7 +58,7 @@
         var sphereGeometry = new THREE.SphereGeometry(0.5,32,32); 
         var sphereMaterial = new THREE. MeshLambertMaterial({color:0xff6600});
         var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
-        sphere.position.set(0,1.5,0);
+        sphere.position.set(0,0,0);
         scene.add(sphere)
 
         // 星をスプライトで作成
@@ -67,7 +67,7 @@
         const material = new THREE.SpriteMaterial({ map: texture,});
 　　　　
         //星をループで生成
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 30; i++) {
            const sprite = new THREE.Sprite(material);
            // ランダムな座標に配置
            sprite.position.x = 4 * (Math.random() - 0.5);
