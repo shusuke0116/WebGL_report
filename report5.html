@@ -56,12 +56,12 @@
         
         // テクスチャー読み込み
         var textureLoader1 = new THREE.TextureLoader();
-        var texture1 = textureLoader1.load("earth.jpg");
+        var texture1 = textureLoader1.load("img/earth.jpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture1;
         
         //バンプマップ
-        var bump = textureLoader1.load("earth.jpg");
+        var bump = textureLoader1.load("img/earth.jpg");
         mat.bumpMap = bump;
         mat.bumpscale = 0.2;
         
