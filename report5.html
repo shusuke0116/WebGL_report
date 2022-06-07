@@ -14,7 +14,7 @@
       function init() {
         // サイズを指定
         const width = 800
-        const height = 600;
+        const height = 400;
 
         // レンダラーを作成
         var renderer = new THREE.WebGLRenderer();
@@ -93,6 +93,11 @@
 
         // 毎フレーム時に実行されるループイベントです
         function update() {
+          
+          //球を回転
+          Sphere.rotation.x += 0.01;
+          Sphere.rotation.y += 0.01;
+          
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
