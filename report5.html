@@ -86,6 +86,18 @@
            sprite.position.x = 4 * (Math.random() - 0.5);
            sprite.position.y = 1.5 * Math.random();
            sprite.position.z = 4 * (Math.random() - 0.5);
+          
+           //地球と被らないように
+           if(sprite.position.x <= 1 && sprite.position.x >= -1){
+              sprite.position.x = 2
+           }
+           if(sprite.position.y <= 1 && sprite.position.y >= -1){
+              sprite.position.y = 2
+           }
+           if(sprite.position.z <= 1 && sprite.position.z >= -1){
+              sprite.position.z = 2
+           }
+          
            // スケールを調整
            sprite.scale.set(0.3, 0.3, 0.3);
 
