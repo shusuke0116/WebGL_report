@@ -83,7 +83,7 @@
         for (let i = 0; i < 100; i++) {
            const sprite = new THREE.Sprite(material);
            // ランダムな座標に配置
-           sprite.position.x = 4 * (Math.random() - 0.5);
+           sprite.position.x = 3.8 * (Math.random() - 0.5);
            sprite.position.y = 1.5 * Math.random();
            sprite.position.z = 4 * (Math.random() - 0.5);
           
@@ -118,6 +118,9 @@
           Sphere.rotation.y += 0.001;
           
           //星
+          sprite2.position.x -= 0.1;
+          sprite2.position.y -= 0.1;
+          sprite2.position.z -= 0.01;
          
           
           // レンダリング
