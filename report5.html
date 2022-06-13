@@ -71,7 +71,7 @@
         //球
         var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
         var Sphere = new THREE.Mesh(geometry2, mat);
-        Sphere.position.set(0,-1,0);
+        Sphere.position.set(0,-0.5,0);
         scene.add(Sphere);
 
         // 星をスプライトで作成
@@ -80,7 +80,7 @@
         const material = new THREE.SpriteMaterial({ map: texture2,});
 　　　　
         //星をループで生成
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < 100; i++) {
            const sprite = new THREE.Sprite(material);
            // ランダムな座標に配置
            sprite.position.x = 4 * (Math.random() - 0.5);
