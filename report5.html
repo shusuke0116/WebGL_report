@@ -98,11 +98,11 @@
         for (let i = 0; i < 10; i++){
            var star = new THREE.Sprite(material);
            shstar[i] = star;
-           star.position.x = 4 * (Math.random() - 0.5);
-           star.position.y = 1.5 * Math.random();
-           star.position.z = 4 * (Math.random() - 0.5);
-           star.scale.set(0.1, 0.1, 0.1);
-           scene.add(star);
+           shstar[i].position.x = 4 * (Math.random() - 0.5);
+           shstar[i].position.y = 1.5 * Math.random();
+           shstar[i].position.z = 4 * (Math.random() - 0.5);
+           shstar[i].scale.set(0.1, 0.1, 0.1);
+           scene.add(shstar[i]);
         }
         
         
