@@ -94,13 +94,16 @@
         }
         
         //動かす星
-        var sprite2 = new THREE.Sprite(material);
-        sprite2.position.x = 4 * (Math.random() - 0.5);
-        sprite2.position.y = 1.5 * Math.random();
-        sprite2.position.z = 4 * (Math.random() - 0.5);
-        sprite2.scale.set(0.1, 0.1, 0.1);
-        scene.add(sprite2);
-        
+        var shstar[10];
+        for (let i = 0; i < 10; i++){
+           var star = new THREE.Sprite(material);
+           shstar[i] = star;
+           star.position.x = 4 * (Math.random() - 0.5);
+           star.position.y = 1.5 * Math.random();
+           star.position.z = 4 * (Math.random() - 0.5);
+           star.scale.set(0.1, 0.1, 0.1);
+           scene.add(star);
+        }
         
         
         update();
@@ -113,11 +116,12 @@
           Sphere.rotation.y += 0.001;
           
           //流れ星
-          sprite2.position.x -= 0.005;
-          sprite2.position.y -= 0.005;
-          sprite2.position.z -= 0.005;
+          for (let i = 0; i < 10; i++){
+             shstar[i].position.x -= 0.005;
+             shstar[i].position.y -= 0.005;
+             shstar[i].position.z -= 0.005;
+          }
           
-          sprite2.rotation.x += 0.1;
           
           
          
