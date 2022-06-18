@@ -27,7 +27,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(75, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 1, -5);
+        camera.position.set(0, 1, 5);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -79,27 +79,27 @@
         var cylinderGeometry = new THREE.CylinderGeometry(1,2,2.5,12);
         //var cylinderMaterial = new THREE.MeshPhongMaterial({color:0xffffff});
         var cylinder = new THREE.Mesh(cylinderGeometry, mat);
-        cylinder.position.set(0,0,0);
+        cylinder.position.set(-2,0,-3;
         cylinder.scale.y = 2;
         scene.add(cylinder);
 
         //角柱の上の部分
         var cylinderGeometry2 = new THREE.CylinderGeometry(1.5,1.5,1,6);
         var cylinder2 = new THREE.Mesh(cylinderGeometry2, mat);
-        cylinder2.position.set(0,2,0);
+        cylinder2.position.set(-2,2,-3);
         scene.add(cylinder2);
         
         //プロペラ
         var geometry = new THREE.BoxGeometry(0.1, 0.35, 0.6);
         var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
         var box = new THREE.Mesh(geometry, material);
-        box.position.set(1.6,2,0); 
+        box.position.set(-3.6,2,-3); 
         box.scale.y = 10;
         scene.add(box);  
 
         //プロペラ2
         var box2 = new THREE.Mesh(geometry, material);
-        box2.position.set(1.6,2,0); 
+        box2.position.set(-3.6,2,-3); 
         box2.scale.y = 10;
         box2.rotation.x = 1.6;
         scene.add(box2); 
