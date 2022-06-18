@@ -52,7 +52,7 @@
         */
         
         //床
-        /*
+        
         var planeGeometry = new THREE.PlaneGeometry(10,10);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xFFFFFF });
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
@@ -60,7 +60,7 @@
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-2,0);
         scene.add(plane);
-        */
+        
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();
@@ -73,6 +73,7 @@
         var bump = textureLoader.load("renga.jpg");
         mat.bumpMap = bump;
         mat.bumpscale = 0.2;
+        
 
         //角柱
         var cylinderGeometry = new THREE.CylinderGeometry(1,2,2.5,12);
@@ -84,7 +85,7 @@
 
         //角柱の上の部分
         var cylinderGeometry2 = new THREE.CylinderGeometry(1.5,1.5,1,6);
-        var cylinder2 = new THREE.Mesh(cylinderGeometry2, mat;
+        var cylinder2 = new THREE.Mesh(cylinderGeometry2, mat);
         cylinder2.position.set(0,2,0);
         scene.add(cylinder2);
 
