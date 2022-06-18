@@ -27,7 +27,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 5);
+        camera.position.set(0, 1, -5);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -64,13 +64,13 @@
 
         // テクスチャー読み込み
         var textureLoader = new THREE.TextureLoader();
-        var texture = textureLoader.load("renga.jpg");
+        var texture = textureLoader.load("img/renga.jpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
        
         
         // バンプマップ読み込み
-        var bump = textureLoader.load("renga.jpg");
+        var bump = textureLoader.load("img/renga.jpg");
         mat.bumpMap = bump;
         mat.bumpscale = 0.2;
         
