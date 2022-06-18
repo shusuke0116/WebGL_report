@@ -112,8 +112,10 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-
           
+          //プロペラ
+          box.rotation.x += 0.01;
+          box2.rotation.x += 0.01;
 
          
         }
