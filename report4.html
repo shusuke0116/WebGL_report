@@ -93,13 +93,13 @@
         var geometry = new THREE.BoxGeometry(0.1, 0.35, 0.6);
         var material = new THREE.MeshPhongMaterial({ color: 0xffffff });
         var box = new THREE.Mesh(geometry, material);
-        box.position.set(-3.6,2,-3); 
+        box.position.set(3.6,2,-3); 
         box.scale.y = 10;
         scene.add(box);  
 
         //プロペラ2
         var box2 = new THREE.Mesh(geometry, material);
-        box2.position.set(-3.6,2,-3); 
+        box2.position.set(3.6,2,-3); 
         box2.scale.y = 10;
         box2.rotation.x = 1.6;
         scene.add(box2); 
