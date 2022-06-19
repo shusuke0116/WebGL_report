@@ -62,16 +62,15 @@
         scene.add(plane);
         
 
-        // テクスチャー読み込み
+        // レンガ読み込み
         var textureLoader1 = new THREE.TextureLoader();
         var texture = textureLoader1.load("img/renga.jpg");
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
        
-        
         // バンプマップ読み込み
-        var bump = textureLoader1.load("img/renga.jpg");
-        mat.bumpMap = bump;
+        var bump1 = textureLoader1.load("img/renga.jpg");
+        mat.bumpMap = bump1;
         mat.bumpscale = 0.2;
         
 
