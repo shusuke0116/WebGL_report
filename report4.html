@@ -83,11 +83,11 @@
         cylinder.scale.y = 2;
         scene.add(cylinder);
 
-        //角柱の上の部分
-        var cylinderGeometry2 = new THREE.CylinderGeometry(1.5,1.5,1,6);
-        var cylinder2 = new THREE.Mesh(cylinderGeometry2, mat);
-        cylinder2.position.set(-2,2,-3);
-        scene.add(cylinder2);
+        //角錐
+        var coneGeometry = new THREE.ConeGeometry(0.5,1,16);
+        var coneMaterial = new THREE.Mesh(coneGeometry, mat);
+        coneGeometry.position.set(-2,2,-3);
+        scene.add(coneGeometry);
         
         //プロペラ
         var geometry = new THREE.BoxGeometry(0.1, 0.35, 0.6);
