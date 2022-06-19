@@ -85,9 +85,9 @@
 
         //角錐
         var coneGeometry = new THREE.ConeGeometry(0.5,1,16);
-        var coneMaterial = new THREE.Mesh(coneGeometry, mat);
+        var cone = new THREE.Mesh(coneGeometry, mat);
         coneGeometry.position.set(-2,2,-3);
-        scene.add(coneGeometry);
+        scene.add(cone);
         
         //プロペラ
         var geometry = new THREE.BoxGeometry(0.1, 0.35, 0.6);
