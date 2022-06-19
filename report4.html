@@ -73,18 +73,18 @@
         mat1.bumpMap = bump1;
         mat1.bumpscale = 0.2;
         
-        /*
+        
         // 黒レンガ読み込み
         var textureLoader2 = new THREE.TextureLoader();
-        var texture = textureLoader1.load("img/renga.jpg");
-        var mat = new THREE.MeshPhongMaterial();
-        mat.map = texture;
+        var texture2 = textureLoader2.load("img/kurorenga.jpg");
+        var mat2 = new THREE.MeshPhongMaterial();
+        mat2.map = texture2;
        
         // バンプマップ読み込み
-        var bump1 = textureLoader1.load("img/renga.jpg");
-        mat.bumpMap = bump1;
-        mat.bumpscale = 0.2;
-        */
+        var bump2 = textureLoader2.load("img/kurorenga.jpg");
+        mat2.bumpMap = bump2;
+        mat2.bumpscale = 0.2;
+        
 
         //角柱
         var cylinderGeometry = new THREE.CylinderGeometry(1,2.5,2.8,12);
@@ -97,7 +97,7 @@
         //角錐
         
         var coneGeometry = new THREE.ConeGeometry(1.7,1.5,16);
-        var cone = new THREE.Mesh(coneGeometry, mat1);
+        var cone = new THREE.Mesh(coneGeometry, mat2);
         cone.position.set(-2,3,-3);
         scene.add(cone);
         
