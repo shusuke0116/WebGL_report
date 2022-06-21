@@ -47,10 +47,21 @@
         // シーンに追加
         scene.add(directionalLight2);
         
+        // テクスチャー読み込み
+        var textureLoader1 = new THREE.TextureLoader();
+        var texture1 = textureLoader1.load("img/lapis-lazuli.jpg");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture1;
+        
+        //バンプマップ
+        var bump = textureLoader1.load("img/lapis-lazuli.jpg");
+        mat.bumpMap = bump;
+        mat.bumpscale = 0.2;
+        
         //体
         var body_g = new THREE.SphereGeometry( 0.15, 32, 32 );
         var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-        var body = new THREE.Mesh( body_g, material);
+        var body = new THREE.Mesh( body_g, mat);
         body.scale.x =0.2;
         body.scale.y =2;
         body.scale.z =0.2;
@@ -77,7 +88,7 @@
          // bevelSegments: 2,  // ui: bevelSegments
         };
         var winggeometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-        var wing1 = new THREE.Mesh(winggeometry, material); 
+        var wing1 = new THREE.Mesh(winggeometry, mat); 
         wing1.position.set(-0.1,0,0);
         wing1.rotation.z = -1.5;
         wing1.scale.set(0.06,0.07,0.07);
