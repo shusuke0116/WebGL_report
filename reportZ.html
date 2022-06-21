@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+  </head>
+<body>
+<script>
+      // ページの読み込みを待つ
+      window.addEventListener('DOMContentLoaded', init);
+
+      function init() {
+        // サイズを指定
+        const width = 800
+        const height = 600;
+
+        // レンダラーを作成
+        var renderer = new THREE.WebGLRenderer();
+        document.body.appendChild(renderer.domElement);
+        renderer.setSize(width, height);
+        // レンダラー：シャドウを有効にする
+        //renderer.shadowMap.enabled = true;
+        // 背景の色を設定
+        renderer.setClearColor(0x000080);
+
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(0, 2, 4);
+
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera, document.body); 
+        
+        // 平行光源1
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(10, 10, 10);
+        // シーンに追加
+        scene.add(directionalLight1);
+        // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0x888888);
+        directionalLight2.position.set(-10, -10, 10);
+        // シーンに追加
+        scene.add(directionalLight2);
+        
+        //体
+        var body_g = new THREE.SphereGeometry( 0.15, 32, 32 );
+        var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        var body = new THREE.Mesh( body_g, material);
+        body.scale.x =0.2;
+        body.scale.y =2;
+        body.scale.z =0.2;
+        body.castShadow = true; 
+        body.position.set(0,0,0);
+
+        //羽
+        const shape = new THREE.Shape();
+        const x = -2.5;
+        const y = -5;
+        shape.moveTo(x + 2.5, y + 2.5);
+        shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
+        shape.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5);
+        shape.bezierCurveTo(x - 3, y + 5.5, x - 1.5, y + 7.7, x + 2.5, y + 9.5);
+        shape.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 4.5, x + 8, y + 3.5);
+        shape.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y);
+        shape.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5);
+        const extrudeSettings = {
+          steps: 2,  // ui: steps
+          depth: 0.01,  // ui: depth
+          //bevelEnabled: true,  // ui: bevelEnabled
+          //bevelThickness: 1,  // ui: bevelThickness
+          //bevelSize: 1,  // ui: bevelSize
+         // bevelSegments: 2,  // ui: bevelSegments
+        };
+        var winggeometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+        var wing1 = new THREE.Mesh(winggeometry, material); 
+        wing1.position.set(-0.1,0,0);
+        wing1.rotation.z = -1.5;
+        wing1.scale.set(0.06,0.07,0.07);
+        wing1.scale.y = 0.02;
+        //羽２
+        var wing2 = new THREE.Mesh(winggeometry, material); 
+        wing2.position.set(0.1,0,0);
+        wing2.rotation.z = 1.5;
+        wing2.scale.set(0.06,0.07,0.07);
+        wing2.scale.y = 0.02;
+
+        var butterfly = new THREE.Group();
+        butterfly.add(wing1);
+        butterfly.add(wing2);
+        butterfly.add(body);
+        butterfly.position.set(0,0,3);
+        butterfly.rotation.x = 0.7;
+        butterfly.scale.set(0.5,0.5,0.5);
+        scene.add(butterfly);
+        
+        update();
+
+        // 毎フレーム時に実行されるループイベントです
+        function update(){
+        
+          //羽ばたき
+          if(i % 2 <= 1){
+            wing1.rotation.y -= 0.05;
+            wing2.rotation.y += 0.05;
+            body.position.z += 0.003;
+          } else if(i % 2 >= 0){
+            wing1.rotation.y += 0.05;
+            wing2.rotation.y -= 0.05;
+            body.position.z -= 0.003;
+          }
+          i += 0.05;
+          
+          
+          
+          
+         
+          
+          // レンダリング
+          renderer.render(scene, camera);
+          requestAnimationFrame(update);
+        }
+      }
+    </script>
+</body>
