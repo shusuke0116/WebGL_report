@@ -5,7 +5,7 @@
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
   </head>
 <body>
-  <h1>lll</h1>
+  <h1>pien</h1>
 <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -29,7 +29,7 @@
         const scene = new THREE.Scene();
 
         // カメラを作成
-        const camera = new THREE.PerspectiveCamera(45, width / height);
+        const camera = new THREE.PerspectiveCamera(75, width / height);
         // カメラの初期座標を設定
         camera.position.set(0, 2, 4);
 
@@ -93,7 +93,7 @@
         butterfly.add(wing1);
         butterfly.add(wing2);
         butterfly.add(body);
-        butterfly.position.set(0,0,3);
+        butterfly.position.set(0,0,0);
         butterfly.rotation.x = 0.7;
         butterfly.scale.set(0.5,0.5,0.5);
         scene.add(butterfly);
