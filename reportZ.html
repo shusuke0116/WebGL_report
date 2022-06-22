@@ -47,18 +47,24 @@
         // シーンに追加
         scene.add(directionalLight2);
         
-        /*
+        
         // ラピスラズリ読み込み
         var textureLoader1 = new THREE.TextureLoader();
         var texture1 = textureLoader1.load("img/lapis-lazuli.jpg");
-        var mat1 = new THREE.MeshPhongMaterial();
-        mat1.map = texture1;
+        var mat_lapis = new THREE.MeshPhongMaterial();
+        mat_lapis.map = texture1;
        
         // バンプマップ読み込み
         var bump1 = textureLoader1.load("img/lapis-lazuli.jpg");
-        mat1.bumpMap = bump1;
-        mat1.bumpscale = 0.4;
-        */
+        mat_lapis.bumpMap = bump1;
+        mat_lapis.bumpscale = 0.4;
+        
+        
+        //円柱
+        var entyu_g = new THREE.CylinderGeometry( 0.3, 0.5, 1, 8 );
+        var entyu = new THREE.Mesh(entyu_g, mat_lapis );
+        entyu.position.set(0,0,0);
+        scene.add(entyu);
         
         //体
         var body_g = new THREE.SphereGeometry( 0.15, 32, 32 );
@@ -106,7 +112,7 @@
         butterfly.add(wing1);
         butterfly.add(wing2);
         butterfly.add(body);
-        butterfly.position.set(0,0,0);
+        butterfly.position.set(-2,0,0);
         butterfly.rotation.x = 0.7;
         butterfly.scale.set(0.5,0.5,0.5);
         scene.add(butterfly);
