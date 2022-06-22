@@ -126,12 +126,12 @@
         butterfly.scale.set(0.5,0.5,0.5);
         scene.add(butterfly);
         
-        //whiteframestar
+        //pinkmoon
         var textureLoader_wfs = new THREE.TextureLoader();  
-        var texture_wfs = textureLoader_wfs.load("img/whiteframestar.jpg");
+        var texture_wfs = textureLoader_wfs.load("img/pinkmoon.jpg");
         const mat_wfs = new THREE.SpriteMaterial({ map: texture_wfs,});
 　　　　
-        //星をループで生成
+        //月
         for (let i = 0; i < 10; i++) {
            var wfs = new THREE.Sprite(mat_wfs);
            // ランダムな座標に配置
