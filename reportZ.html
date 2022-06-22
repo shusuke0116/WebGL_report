@@ -60,11 +60,11 @@
         //mat_lapis.bumpscale = 0.4;
         
         var planeGeometry = new THREE.PlaneGeometry(10,10);
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
-        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        //var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+        var plane = new THREE.Mesh(planeGeometry,mat_lapis);
         plane.receiveShadow = true; //影がつく
         plane.rotation.set( -Math.PI/2, 0, 0 );
-        plane.position.set(0,-2.8,0);
+        plane.position.set(0,-3,0);
         scene.add(plane);
         
         
