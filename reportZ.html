@@ -90,13 +90,13 @@
          // bevelSegments: 2,  // ui: bevelSegments
         };
         var winggeometry = new THREE.ExtrudeGeometry(shape, extrudeSettings);
-        var wing1 = new THREE.Mesh(winggeometry, mat_3); 
+        var wing1 = new THREE.Mesh(winggeometry, mat_w); 
         wing1.position.set(-0.1,0,0);
         wing1.rotation.z = -1.5;
         wing1.scale.set(0.06,0.07,0.07);
         wing1.scale.y = 0.02;
         //羽２
-        var wing2 = new THREE.Mesh(winggeometry, mat_3); 
+        var wing2 = new THREE.Mesh(winggeometry, mat_w); 
         wing2.position.set(0.1,0,0);
         wing2.rotation.z = 1.5;
         wing2.scale.set(0.06,0.07,0.07);
