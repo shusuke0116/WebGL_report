@@ -49,12 +49,12 @@
         
         // レンガ読み込み
         var textureLoader1 = new THREE.TextureLoader();
-        var texture1 = textureLoader1.load("img/sirorenga.jpg");
+        var texture1 = textureLoader1.load("img/lapis-lazuli.jpg");
         var mat1 = new THREE.MeshPhongMaterial();
         mat1.map = texture1;
        
         // バンプマップ読み込み
-        var bump1 = textureLoader1.load("img/sirorenga.jpg");
+        var bump1 = textureLoader1.load("img/lapis-lazuli.jpg");
         mat1.bumpMap = bump1;
         mat1.bumpscale = 0.2;
         
