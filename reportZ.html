@@ -50,12 +50,12 @@
         
         // ラピスラズリ読み込み
         var textureLoader1 = new THREE.TextureLoader();
-        var texture1 = textureLoader1.load("img/lapis.jpg");
+        var texture1 = textureLoader1.load("img/lapis.png");
         var mat_lapis = new THREE.MeshPhongMaterial();
         mat_lapis.map = texture1;
        
         // バンプマップ読み込み
-        var bump1 = textureLoader1.load("img/lapis.jpg");
+        var bump1 = textureLoader1.load("img/lapis.png");
         mat_lapis.bumpMap = bump1;
         mat_lapis.bumpscale = 0.4;
         
