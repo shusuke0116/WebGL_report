@@ -59,6 +59,7 @@
         mat_lapis.bumpMap = bump1;
         //mat_lapis.bumpscale = 0.4;
         
+        //床
         var planeGeometry = new THREE.PlaneGeometry(10,10);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
@@ -125,6 +126,21 @@
         butterfly.scale.set(0.5,0.5,0.5);
         scene.add(butterfly);
         
+        //whiteframestar
+        var textureLoader_wfs = new THREE.TextureLoader();  
+        var texture_wfs = textureLoader_wfs.load("img/whiteframestar.jpg");
+        const mat_wfs = new THREE.SpriteMaterial({ map: texture_wfs,});
+　　　　
+        //星をループで生成
+        for (let i = 0; i < 10; i++) {
+           var wfs = new THREE.Sprite(mat_wfs);
+           // ランダムな座標に配置
+           wfs.position.x = 3.8 * (Math.random() - 0.5);
+           wfs.position.y = 1.5 * Math.random();
+           wfs.position.z = 4 * (Math.random() - 0.5);
+           wfs.scale.set(0.05, 0.05, 0.05);
+           scene.add(wfs);
+        }
         
         
         //操作用
