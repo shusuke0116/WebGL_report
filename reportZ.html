@@ -42,10 +42,6 @@
         directionalLight1.position.set(10, 10, 10);
         scene.add(directionalLight1);
         
-        // スポットライト光源を作成
-        // new THREE.SpotLight(色, 光の強さ, 距離, 照射角, ボケ具合, 減衰率)
-        const light = new THREE.SpotLight(0xFFFFFF, 4, 30, Math.PI / 4, 10, 0.5);
-        scene.add(light);
            
         // ラピスラズリ読み込み
         var textureLoader1 = new THREE.TextureLoader();
