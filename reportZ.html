@@ -28,8 +28,8 @@
         const scene = new THREE.Scene();
 
         // カメラを作成
-        const camera = new THREE.PerspectiveCamera(75, width / height);
-        camera.position.set(0, 10, 15);
+        const camera = new THREE.PerspectiveCamera(55, width / height);
+        camera.position.set(0, 5, 10);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -187,7 +187,7 @@
         //f_body_w.castShadow = true;
         f_body_w.scale.x =3;
         f_body_w.scale.y =1.65;
-        f_body_w.position.set(0,2,0);
+        f_body_w.position.set(0,2,-3);
         scene.add(f_body_w);
         
         
