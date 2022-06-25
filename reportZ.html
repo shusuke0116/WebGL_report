@@ -54,7 +54,7 @@
         
         //床
         var planeGeometry = new THREE.PlaneGeometry(30,30);
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
+        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         plane.receiveShadow = true;   //影
         plane.rotation.set( -Math.PI/2, 0, 0 );
