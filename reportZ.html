@@ -51,7 +51,7 @@
         //mat_lapis.bumpscale = 0.4;
         
         //床
-        var planeGeometry = new THREE.PlaneGeometry(10,10);
+        var planeGeometry = new THREE.PlaneGeometry(30,30);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xffffff });
         var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         plane.receiveShadow = true;   //影
@@ -152,6 +152,40 @@
            k2.scale.y = 4 * (Math.random());
            scene.add(k2);
         }
+        
+        //魚
+        var f_body_g = new THREE.SphereGeometry( 0.5, 32, 32 );
+        var mat_w = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+        var f_body = new THREE.Mesh( f_body_g, mat_w);
+        f_body.castShadow = true; 
+        f_body.scale.x =2.7;
+        f_body.scale.y =1.35;
+        f_body.position.set(0,0,0);
+        
+        var f_teal_g = new THREE.CylinderGeometry( 0.7, 0.7, 0.1, 3 );
+        var f_teal = new THREE.Mesh( f_teal_g,mat_w );
+        f_teal.castShadow = true; 
+        f_teal.rotation.y -= 1.65;
+        f_teal.rotation.z += 1.65;
+        f_teal.position.set( 1.45, 0, 0 );
+        
+        var fish = new THREE.Group();
+        fish.add(f_body);
+        fish.add(f_teal);
+        fish.scale.set(0.1,0.1,0.1);
+        fish.position.set(0,-2,0);
+        scene.add(fish);
+        
+
+        //ワイヤーフレーム
+        var f_body_wg = new THREE.SphereGeometry( 1, 32, 32 );
+        var mat_b_w = new THREE.MeshBasicMaterial({ color: 0x0000ff ,wireframe: true});
+        var f_body_w = new THREE.Mesh( f_body_wg, mat_b_w);
+        f_body_w.castShadow = true;
+        f_body_w.scale.x =3;
+        f_body_w.scale.y =1.65;
+        f_body_w.position.set(0,2,0);
+        scene.add(f_body_w);
         
         
         
