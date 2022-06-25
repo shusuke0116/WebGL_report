@@ -34,17 +34,14 @@
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
         
-        /*
+        
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
         directionalLight1.castShadow = true; 
-        directionalLight1.position.set(10, 10, 10);
+        directionalLight1.position.set(0, 20, 0);
         scene.add(directionalLight1);
-        */
         
-        const light = new THREE.PointLight(0xFFFFFF, 1);
-        light.position.set(0, 20, 0);
-        scene.add(light);
+        
         
         // ラピスラズリ読み込み
         var textureLoader1 = new THREE.TextureLoader();
