@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/TDSLoader.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/GLTFLoader.js"></script>
   </head>
 <body>
   <h1>pien</h1>
@@ -63,7 +63,11 @@
         scene.add(plane);
         
         //イルカ
-        
+        const loader = new THREE.GLTFLoader();
+        loader.load('3dmodel/Fish.glb', (gltf) => {
+          const model = gltf.scene;
+          scene.add(model);
+        });
         
         /*
         //円柱
