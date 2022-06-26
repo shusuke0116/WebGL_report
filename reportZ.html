@@ -200,7 +200,13 @@
         f_body_w.position.set(-1.5,2,-3);
         scene.add(f_body_w);
         
-        
+        //黒い面体
+        var parts_g = new THREE.OctahedronGeometry(7, 2);
+        var parts_m = new THREE.MeshBasicMaterial({ color: 0x000000,transparent: true, opacity: 0.5});
+        var parts = new THREE.Mesh( parts_g, parts_m);
+        //parts.scale.set(0.1,0.1,0.1);
+        parts.position.set(0,2,2);
+        scene.add(parts);
         
         //操作用
         var i = 1;
