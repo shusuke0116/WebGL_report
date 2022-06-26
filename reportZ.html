@@ -70,7 +70,6 @@
         loader.load('3dmodel/Shark.glb', (gltf) => {
           model = gltf.scene;
           model.position.set(0,2,0);
-          model.position.x += 0.01;
           scene.add(model);
         });
         
