@@ -29,9 +29,9 @@
         const scene = new THREE.Scene();
         loader.load('3dmodel/Shark.glb', (gltf) => {
             const model = gltf.scene;
-            
+            scene.add(model);
           });
-        scene.add(model);
+        
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(55, width / height);
