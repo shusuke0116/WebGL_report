@@ -64,11 +64,12 @@
         
         //イルカ
         const loader = new THREE.GLTFLoader();
+        /*
         loader.load('3dmodel/Shark.glb', (gltf) => {
           const model = gltf.scene;
           scene.add(model);
-          model.position.x += 0.1;
         });
+        */
         
         /*
         //円柱
@@ -209,6 +210,18 @@
         // 毎フレーム時に実行されるループイベントです
         function update(){
           
+        if(i % 2 <= 1){
+          loader.load('3dmodel/Shark.glb', (gltf) => {
+            const model = gltf.scene;
+            scene.add(model);
+          });
+        } else if(i % 2 >= 0){
+          scene.remove(model);
+        }
+          
+        i += 0.05;
+
+        
           
         
           /*
