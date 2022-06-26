@@ -198,7 +198,11 @@
         var parts_m = new THREE.MeshBasicMaterial({ color: 0x000000,transparent: true, opacity: 0.8});
         var parts = new THREE.Mesh( parts_g, parts_m);
         parts.scale.set(0.1,0.1,0.1);
-        parts.position.set(0,2,2);
+        parts.position.set(0,2,-3);
+        
+        var parts1 = new THREE.Mesh( parts_g, parts_m);
+        parts1.scale.set(0.1,0.1,0.1);
+        parts1.position.set(2,2,-3);
         
         
         //操作用
@@ -232,7 +236,12 @@
           parts.scale.y += 0.01
           parts.scale.z += 0.01
         }
-        
+          
+        if(parts.scale.x >=0.5 && parts1.scale.x <= 1){
+          parts1.scale.x += 0.01
+          parts1.scale.y += 0.01
+          parts1.scale.z += 0.01
+        }
           /*
         if(i >= 5){
           loader.load('3dmodel/Shark.glb', (gltf) => {
