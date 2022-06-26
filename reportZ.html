@@ -67,6 +67,7 @@
         loader.load('3dmodel/Shark.glb', (gltf) => {
           const model = gltf.scene;
           scene.add(model);
+          model.position.x += 0.1;
         });
         
         /*
@@ -208,7 +209,7 @@
         // 毎フレーム時に実行されるループイベントです
         function update(){
           
-          model.position.x += 0.1;
+          
         
           /*
           //羽ばたき
