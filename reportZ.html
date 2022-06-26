@@ -3,6 +3,7 @@
     <meta charset="utf-8" />
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/ColladaLoader.js"></script>
   </head>
 <body>
   <h1>pien</h1>
@@ -60,6 +61,13 @@
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-3,0);
         scene.add(plane);
+        
+        //killer whole
+        const loader = new THREE.ColladaLoader();
+        loader.load('3dmodel/killerwhole.dae', (collada) => {
+          const model = collada.scene;
+        scene.add(model);
+        });
         
         /*
         //円柱
