@@ -66,14 +66,11 @@
         
         //イルカ
         const loader = new THREE.GLTFLoader();
-        var model;
-        
-        /*
         loader.load('3dmodel/Shark.glb', (gltf) => {
           const model = gltf.scene;
           scene.add(model);
         });
-        */
+        
         
         
         /*
@@ -220,10 +217,7 @@
           scene.remove(fish);
         } else if(i >= 3){
     
-          loader.load('3dmodel/Shark.glb', (gltf) => {
-          model = gltf.scene;
-          scene.add(model);
-        });
+          
           scene.add(fish);
         } 
           
