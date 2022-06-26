@@ -216,9 +216,10 @@
         function update(){
           
         if(i >= 6){
-          
+          loader.load('3dmodel/Shark.glb', (gltf) => {
+          model = gltf.scene;
           scene.remove(model);
-       
+          });
           scene.remove(fish);
         } else if(i >= 3){
     
