@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <script src="https://unpkg.com/three@0.137.4/build/three.min.js"></script>
     <script src="https://unpkg.com/three@0.137.4/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/ColladaLoader.js"></script>
+    <script src="https://unpkg.com/three@0.137.4/examples/js/loaders/GLTFLoader.js"></script>
   </head>
 <body>
   <h1>pien</h1>
@@ -62,11 +62,10 @@
         plane.position.set(0,-3,0);
         scene.add(plane);
         
-        //killer whole
-        const loader = new THREE.ColladaLoader();
-        loader.load('3dmodel/killer whole.dae', (collada) => {
-          const model = collada.scene;
-          model.position.set(0,0,0);
+        //イルカ
+        const loader = new THREE.GLTFLoader();
+        loader.load('3dmodel/DOLPHIN.glb', (gltf) => {
+          const model = gltf.scene;
           scene.add(model);
         });
         
