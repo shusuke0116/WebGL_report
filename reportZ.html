@@ -67,7 +67,8 @@
         //イルカ
         const loader = new THREE.GLTFLoader();
         loader.load('3dmodel/Shark.glb', (gltf) => {
-          const model = gltf.scene;
+          var model = gltf.scene;
+          model.position.set(0,0,0);
           scene.add(model);
         });
         
