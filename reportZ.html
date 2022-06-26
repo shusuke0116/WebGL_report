@@ -27,6 +27,10 @@
 
         // シーンを作成
         const scene = new THREE.Scene();
+        loader.load('3dmodel/Shark.glb', (gltf) => {
+            const model = gltf.scene;
+            scene.add(model);
+          });
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(55, width / height);
@@ -211,10 +215,8 @@
         function update(){
           
         if(i % 2 <= 1){
-          loader.load('3dmodel/Shark.glb', (gltf) => {
-            const model = gltf.scene;
-            scene.add(model);
-          });
+          scene.add(model);
+          
         } else if(i % 2 >= 0){
           scene.remove(model);
         }
