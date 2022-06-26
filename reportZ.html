@@ -66,7 +66,8 @@
         const loader = new THREE.ColladaLoader();
         loader.load('3dmodel/killer whole.dae', (collada) => {
           const model = collada.scene;
-        scene.add(model);
+          model.position.set(0,0,0);
+          scene.add(model);
         });
         
         /*
@@ -187,7 +188,7 @@
         fish.position.set(0,-2,0);
         scene.add(fish);
         
-
+        /*
         //ワイヤーフレーム
         var f_body_wg = new THREE.SphereGeometry( 1, 32, 32 );
         var mat_b_w = new THREE.MeshBasicMaterial({ color: 0x0000ff ,wireframe: true});
@@ -197,7 +198,7 @@
         f_body_w.scale.y =1.65;
         f_body_w.position.set(0,2,-3);
         scene.add(f_body_w);
-        
+        */
         
         
         //操作用
