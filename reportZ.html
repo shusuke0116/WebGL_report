@@ -67,13 +67,7 @@
         //イルカ
         const loader = new THREE.GLTFLoader();
         var model;
-        loader.load('3dmodel/Shark.glb', (gltf) => {
-          model = gltf.scene;
-          model.castShadow = true; 
-          model.scale.set(4,4,4);
-          model.position.set(0,2,-3);
-          scene.add(model);
-        });
+        
         
         
         
@@ -235,6 +229,16 @@
         }
         if(f_body_w.scale.z <= 1.65){
           f_body_w.scale.z += 0.01;
+        }
+          
+        if(i >= 2){
+          loader.load('3dmodel/Shark.glb', (gltf) => {
+            model = gltf.scene;
+            model.castShadow = true; 
+            model.scale.set(4,4,4);
+            model.position.set(0,2,-3);
+            scene.add(model);
+          });
         }
         
         
