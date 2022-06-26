@@ -29,8 +29,9 @@
         const scene = new THREE.Scene();
         loader.load('3dmodel/Shark.glb', (gltf) => {
             const model = gltf.scene;
-            scene.add(model);
+            
           });
+        scene.add(model);
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(55, width / height);
@@ -214,6 +215,7 @@
         // 毎フレーム時に実行されるループイベントです
         function update(){
           
+        /*
         if(i % 2 <= 1){
           scene.add(model);
           
@@ -222,6 +224,7 @@
         }
           
         i += 0.05;
+        */
 
         
           
