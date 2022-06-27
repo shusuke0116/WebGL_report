@@ -77,7 +77,7 @@
         /*
         //体
         var body_g = new THREE.SphereGeometry( 0.15, 32, 32 );
-        var mat_w = new THREE.MeshBasicMaterial({ color: 0xffffff });
+        var mat_w = new THREE.MeshPhongMaterial({ color: 0xffffff });
         var body = new THREE.Mesh( body_g, mat_w);
         body.scale.x =0.2;
         body.scale.y =2;
@@ -163,7 +163,7 @@
         
         //魚
         var f_body_g = new THREE.SphereGeometry( 0.5, 32, 32 );
-        var mat_w = new THREE.MeshBasicMaterial({ color: 0x0000ff });
+        var mat_w = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var f_body = new THREE.Mesh( f_body_g, mat_w);
         f_body.castShadow = true; 
         f_body.scale.x =2.7;
@@ -187,7 +187,7 @@
         
         //ワイヤーフレーム
         var f_body_wg = new THREE.SphereGeometry( 2, 32, 32 );
-        var mat_b_w = new THREE.MeshBasicMaterial({ color: 0x0000ff ,wireframe: true});
+        var mat_b_w = new THREE.MeshPhongMaterial({ color: 0x0000ff ,wireframe: true});
         var f_body_w = new THREE.Mesh( f_body_wg, mat_b_w);
         //f_body_w.castShadow = true;
         f_body_w.scale.set(0.1,0.1,0.1);
@@ -196,7 +196,7 @@
         
         //黒い面体
         var parts_g = new THREE.OctahedronGeometry(1, 2);
-        var parts_m = new THREE.MeshBasicMaterial({ color: 0x000000});
+        var parts_m = new THREE.MeshPhongMaterial({ color: 0x000000});
         var parts = new THREE.Mesh( parts_g, parts_m);
         parts.scale.set(0.1,0.1,0.1);
         parts.position.set(0,2,-3);
