@@ -352,11 +352,9 @@
           if(i >= 5){
             loader.load('3dmodel/Shark.glb', (gltf) => {
               model = gltf.scene;
-              model.traverse((object) => { 
-                if(object.isMesh) { 
-                  model.castShadow = true; 
-                  model.receiveShadow = true;
-                }
+              model.traverse((model) => { 
+                model.castShadow = true; 
+                model.receiveShadow = true;  
               });
               model.scale.set(4,4,4);
               model.position.set(0,2,-3);
