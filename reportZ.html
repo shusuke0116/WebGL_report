@@ -217,7 +217,8 @@
         //Shark.png
         var textureLoader_SH = new THREE.TextureLoader();  
         var texture_SH = textureLoader_SH.load("img/Sharkhead.png");
-        const mat_SH = new THREE.SpriteMaterial({ map: texture_SH,});
+        var mat_SH = new THREE.SpriteMaterial({ map: texture_SH,});
+        mat_SH.map = texture1; 
         
         var tab_g = new THREE.PlaneGeometry(2.5, 2);
         var tab = new THREE.Mesh(tab_g,mat_SH);
