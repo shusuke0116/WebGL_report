@@ -215,10 +215,14 @@
         */
         
         //Shark.png
-        var textureLoader_SH = new THREE.TextureLoader();  
+        var textureLoader_SH = new THREE.TextureLoader();
         var texture_SH = textureLoader_SH.load("img/Sharkhead.png");
-        var mat_SH = new THREE.SpriteMaterial({ map: texture_SH,});
-        mat_SH.map = texture1; 
+        var mat_SH = new THREE.MeshPhongMaterial();
+        mat_SH.map = texture_SH;       
+        // バンプマップ読み込み
+        var bump_SH = textureLoader1.load("img/Sharkhead.png");
+        mat_SH.bumpMap = bump_SH;
+        
         
         var tab_g = new THREE.PlaneGeometry(2.5, 2);
         var tab = new THREE.Mesh(tab_g,mat_SH);
