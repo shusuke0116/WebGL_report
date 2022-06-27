@@ -312,15 +312,7 @@
         
           
         
-          if(i >= 5){
-            loader.load('3dmodel/Shark.glb', (gltf) => {
-              model = gltf.scene;
-              model.castShadow = true; 
-              model.scale.set(4,4,4);
-              model.position.set(0,2,-3);
-              scene.add(model);
-            });
-          }
+          
        
         
           /*
@@ -354,6 +346,28 @@
             }
             tab2.scale.y += 0.05;
           }
+          
+          
+          if(i >= 5){
+            loader.load('3dmodel/Shark.glb', (gltf) => {
+              model = gltf.scene;
+              model.castShadow = true; 
+              model.scale.set(4,4,4);
+              model.position.set(0,2,-3);
+              scene.add(model);
+            });
+            
+            tab.scale.y -= 0.1;
+            tab1.scale.y -= 0.1;
+            tab2.scale.y -= 0.1;
+            if(tab.scale.y <= 0.11){
+              scene.remove(tab);
+              scene.remove(tab1);
+              scene.remove(tab2);
+              
+          }
+          
+          
           
          
           
