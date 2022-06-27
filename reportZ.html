@@ -361,15 +361,11 @@
             tab1.scale.y -= 0.1;
             tab2.scale.y -= 0.1;
             
-            if(tab.scale.y <= 0.1){
+            if(tab.scale.y <= 0.11){
               scene.remove(tab);
               scene.remove(tab1);
               scene.remove(tab2);
-              tab_g.dispose();
-              mat_SH.dispose();
-              mat_SB.dispose();
-              mat_ST.dispose();
-            
+            }
           }
           
           
