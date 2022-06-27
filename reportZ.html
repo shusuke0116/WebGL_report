@@ -219,17 +219,37 @@
         var texture_SH = textureLoader_SH.load("img/Sharkhead.png");
         var mat_SH = new THREE.MeshPhongMaterial();
         mat_SH.map = texture_SH;       
-        /*
-        var bump_SH = textureLoader_SH.load("img/Sharkhead.png");
-        mat_SH.bumpMap = bump_SH;
-        */
         
         var tab_g = new THREE.PlaneGeometry(2.5, 2);
         var tab = new THREE.Mesh(tab_g,mat_SH);
         tab.scale.y = 0.01;
         tab.rotation.x = -0.2;
-        tab.position.set(0,1,0);
+        tab.rotation.y = 0.2;
+        tab.position.set(-2,1,0);
         scene.add(tab);
+        
+        var textureLoader_SB = new THREE.TextureLoader();
+        var texture_SB = textureLoader_SB.load("img/Sharkback.png");
+        var mat_SB = new THREE.MeshPhongMaterial();
+        mat_SB.map = texture_SB;       
+        
+        var tab1 = new THREE.Mesh(tab_g,mat_SB);
+        tab1.scale.y = 0.01;
+        tab1.rotation.x = -0.2;
+        tab1.position.set(0,1,0);
+        scene.add(tab1);
+        
+        var textureLoader_ST = new THREE.TextureLoader();
+        var texture_ST = textureLoader_ST.load("img/Sharkteal.png");
+        var mat_ST = new THREE.MeshPhongMaterial();
+        mat_ST.map = texture_ST;       
+        
+        var tab2 = new THREE.Mesh(tab_g,mat_ST);
+        tab2.scale.y = 0.01;
+        tab2.rotation.x = -0.2;
+        tab2.rotation.y = -0.2;
+        tab2.position.set(2,1,0);
+        scene.add(tab2);
         
         //操作用
         var i = 1;
@@ -319,8 +339,12 @@
           if(tab.scale.y <= 2){
             tab.scale.y += 0.05;
           }
-          
-          
+          if(tab1.scale.y <= 2){
+            tab1.scale.y += 0.05;
+          }
+          if(tab2.scale.y <= 2){
+            tab2.scale.y += 0.05;
+          }
           
          
           
