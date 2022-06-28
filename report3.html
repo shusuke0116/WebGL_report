@@ -210,10 +210,14 @@
 
           if(i % 2 <= 1){
             porigon.position.y += 0.01;
+            leg_1.rotation.x += 0.01;
+            leg_2.rotation.x += 0.01;
           } else if(i % 2 >= 0){
             porigon.position.y -= 0.01;
+            leg_1.rotation.x -= 0.01;
+            leg_2.rotation.x -= 0.01;
           }
-          i += 0.02;
+          i += 0.01;
         }
       }
     </script>
