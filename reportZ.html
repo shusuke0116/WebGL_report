@@ -299,7 +299,7 @@
           
           
           
-          if(i >= 4){
+          if(i >= 4 && i <= 15){
             if(i >= 8){
               loader.load('3dmodel/Shark.glb', (gltf) => {
                 model = gltf.scene;
@@ -323,7 +323,7 @@
                 scene.remove(parts);  
               } 
             }
-            if(i >= 8){
+            if(i >= 9){
               if(box.scale.x >= 0.1 && parts.scale.y <= 0.2){
                 box.scale.x -= 0.03;
                 box.scale.y -= 0.03;
