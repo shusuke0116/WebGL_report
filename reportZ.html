@@ -261,11 +261,7 @@
         */  
           i += 0.01;
           
-          if(f_body_w.scale.x <= 3.2){
-            f_body_w.scale.x += 0.02;
-            f_body_w.scale.y += 0.01;
-            f_body_w.scale.z += 0.01;
-          } else if(tab2.scale.y >= 1.9 && parts.scale.x <= 3){
+          if(tab2.scale.y >= 1.9 && parts.scale.x <= 3){
             if(parts.scale.x == 0.1){
               scene.add(parts);
             }
