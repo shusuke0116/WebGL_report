@@ -186,7 +186,7 @@
         tab.scale.y = 0.01;
         tab.rotation.x = -0.2;
         tab.rotation.y = 0.2;
-        tab.position.set(-5,1,3);
+        tab.position.set(-5,1,5);
         
         
         var textureLoader_SB = new THREE.TextureLoader();
@@ -317,8 +317,6 @@
                 scene.remove(tab);
                 scene.remove(tab1);
                 scene.remove(tab2);
-                scene.remove(f_body_w);
-                scene.remove(parts);
               } 
             }
             if(box.scale.x >= 0.1){
@@ -334,16 +332,18 @@
               laser.scale.y -= 0.03;
               laser.scale.z -= 0.03;
               laser.rotation.y -= 0.05;
-              f_body_w.scale.x -= 0.03;
-              f_body_w.scale.y -= 0.03;
-              f_body_w.scale.z -= 0.03;
-              parts.scale.x -= 0.03;
-              parts.scale.y -= 0.03;
-              parts.scale.z -= 0.03;
+              f_body_w.scale.x -= 0.01;
+              f_body_w.scale.y -= 0.01;
+              f_body_w.scale.z -= 0.01;
+              parts.scale.x -= 0.01;
+              parts.scale.y -= 0.01;
+              parts.scale.z -= 0.01;
             } else{
               scene.remove(box);
               scene.remove(box2);
               scene.remove(laser);
+              scene.remove(f_body_w);
+              scene.remove(parts);
               
             }
           }
