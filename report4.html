@@ -52,10 +52,18 @@
         */
         
         //床
+        var textureLoader_s = new THREE.TextureLoader();
+        var texture_s = textureLoader_s.load("img/sibahu.jpg");
+        var mat_s = new THREE.MeshPhongMaterial();
+        mat_s.map = texture_s;
+        // バンプマップ読み込み
+        var bump_s = textureLoader_s.load("img/sibahu.jpg");
+        mat_s.bumpMap = bump_s;
+        mat_s.bumpscale = 0.2;
         
         var planeGeometry = new THREE.PlaneGeometry(10,10);
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x99FFFF });
-        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        //var planeMaterial = new THREE.MeshPhongMaterial({ color: 0x99FFFF });
+        var plane = new THREE.Mesh(planeGeometry,mat_s);
         plane.receiveShadow = true; //影がつく
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-2.8,0);
