@@ -233,19 +233,19 @@
           i += 0.01;
           j += 0.01;
           
-          if(f_body_w.scale.x >= 3 && tab.scale.y <= 2){
-            if(tab.scale.y == 0.01){
-              scene.add(tab);
-            }
-            tab.scale.y += 0.05;
-          }
-          if(tab.scale.y >= 0.5 && tab1.scale.y <= 2){
+          if(f_body_w.scale.x >= 3 && tab1.scale.y <= 2){
             if(tab1.scale.y == 0.01){
               scene.add(tab1);
             }
+            tab.scale.y += 0.05;
+          }
+          if(tab1.scale.y >= 0.5 && tab.scale.y <= 2){
+            if(tab.scale.y == 0.01){
+              scene.add(tab);
+            }
             tab1.scale.y += 0.05;
           }
-          if(tab1.scale.y >= 0.5 && tab2.scale.y <= 2){
+          if(tab.scale.y >= 0.5 && tab2.scale.y <= 2){
             if(tab2.scale.y == 0.01){
               scene.add(tab2);
             }
