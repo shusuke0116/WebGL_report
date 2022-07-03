@@ -186,9 +186,10 @@
         tab.rotation.y = 0.2;
         tab.position.set(-5,1,5);
           
+        //タブ
         var textureLoader_SB = new THREE.TextureLoader();
         var texture_SB = textureLoader_SB.load("img/Sharkback.png");
-        var mat_SB = new THREE.MeshPhongMaterial();
+        var mat_SB = new THREE.MeshPhongMaterial(transparent: true, opacity: 0.5);
         mat_SB.map = texture_SB;       
         
         var tab1 = new THREE.Mesh(tab_g,mat_SB);
