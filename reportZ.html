@@ -58,7 +58,7 @@
         //床
         var planeGeometry = new THREE.PlaneGeometry(50,50);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
-        var plane = new THREE.Mesh({planeGeometry,planeMaterial});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
         plane.receiveShadow = true;   //影
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-3,0);
@@ -189,7 +189,7 @@
         //タブ
         var textureLoader_SB = new THREE.TextureLoader();
         var texture_SB = textureLoader_SB.load("img/Sharkback.png");
-        var mat_SB = new THREE.MeshPhongMaterial(transparent: true, opacity: 0.5);
+        var mat_SB = new THREE.MeshPhongMaterial({transparent: true, opacity: 0.5});
         mat_SB.map = texture_SB;       
         
         var tab1 = new THREE.Mesh(tab_g,mat_SB);
