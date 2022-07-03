@@ -292,8 +292,9 @@
           
           
           
-          if(i >= 5 && i <= 7){
-            loader.load('3dmodel/Shark.glb', (gltf) => {
+          if(i >= 5){
+            if(i >= 7){
+              loader.load('3dmodel/Shark.glb', (gltf) => {
               model = gltf.scene;
               model.traverse((model) => { 
                 model.castShadow = true; 
@@ -315,6 +316,7 @@
               scene.remove(parts);
               
             }
+            
           }
           
           
