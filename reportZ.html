@@ -161,6 +161,7 @@
         }
         */
         
+        /*
         //魚
         var f_body_g = new THREE.SphereGeometry( 0.5, 32, 32 );
         var mat_w = new THREE.MeshPhongMaterial({ color: 0x0000ff });
@@ -183,7 +184,7 @@
         fish.scale.set(0.1,0.1,0.1);
         fish.position.set(0,0,2);
         scene.add(fish);
-        
+        */
         
         
         //ワイヤーフレーム
@@ -199,20 +200,9 @@
         var parts_g = new THREE.OctahedronGeometry(1, 2);
         var parts_m = new THREE.MeshPhongMaterial({ color: 0x000000});
         var parts = new THREE.Mesh( parts_g, parts_m);
-        parts.scale.set(0.1,0.1,0.1);
+        parts.scale.set(0.01,0.01,0.01);
         parts.position.set(0,2,-3);
         
-        var parts1 = new THREE.Mesh( parts_g, parts_m);
-        parts1.scale.set(0.1,0.1,0.1);
-        parts1.position.set(2,2,-3);
-        
-        var parts2 = new THREE.Mesh( parts_g, parts_m);
-        parts2.scale.set(0.1,0.1,0.1);
-        parts2.position.set(-2.3,2,-3);
-        
-        var parts3 = new THREE.Mesh( parts_g, parts_m);
-        parts3.scale.set(0.1,0.1,0.1);
-        parts3.position.set(-5,2,-3);
         
         
         //Shark.png
@@ -275,46 +265,16 @@
             f_body_w.scale.x += 0.02;
             f_body_w.scale.y += 0.01;
             f_body_w.scale.z += 0.01;
-          } else if(tab2.scale.y >= 1.9 && parts.scale.x <= 2.5){
+          } else if(tab2.scale.y >= 1.9 && parts.scale.x <= 3){
             if(parts.scale.x == 0.1){
               scene.add(parts);
             }
-            parts.scale.x += 0.05;
-            parts.scale.y += 0.05;
-            parts.scale.z += 0.05;
+            parts.scale.x += 0.02;
+            parts.scale.y += 0.01;
+            parts.scale.z += 0.01;
           }
-          
-          if(parts.scale.x >=0.5 && parts2.scale.x <= 2.5){
-            if(parts2.scale.x == 0.1){
-              scene.add(parts2);
-            }
-            parts2.scale.x += 0.05;
-            parts2.scale.y += 0.05;
-            parts2.scale.z += 0.05;
-          }
-          
-          if(parts2.scale.x >=0.3 && parts1.scale.x <= 2){
-            if(parts1.scale.x == 0.1){
-              scene.add(parts1);
-            }
-            parts1.scale.x += 0.05;
-            parts1.scale.y += 0.05;
-            parts1.scale.z += 0.05;
-          }  
-          if(parts1.scale.x >=0.3 && parts3.scale.x <= 2){
-            if(parts3.scale.x == 0.1){
-              scene.add(parts3);
-            }
-            parts3.scale.x += 0.05;
-            parts3.scale.y += 0.05;
-            parts3.scale.z += 0.05;
-          }    
-          
-        
-          
-        
-          
-       
+            
+             
         
           /*
           //羽ばたき
