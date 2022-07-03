@@ -163,10 +163,9 @@
         //f_body_w.castShadow = true;
         f_body_w.scale.set(0.01,0.01,0.01);
         f_body_w.position.set(-0.5,1.6,-3);
-        
-        
-        //黒い面体
-        var parts_g = new THREE.OctahedronGeometry(2, 2);
+          
+        //黒い立体
+        var parts_g = new THREE.BoxGeometry(4, 4, 4);
         var parts_m = new THREE.MeshPhongMaterial({ color: 0x000000});
         var parts = new THREE.Mesh( parts_g, parts_m);
         parts.scale.set(0.1,0.1,0.1);
