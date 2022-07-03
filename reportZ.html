@@ -211,7 +211,7 @@
         tab2.rotation.y = -0.2;
         tab2.position.set(5,1,3);
         
-        var box_g = new THREE.BoxGeometry(11, 0.1, 11);
+        var box_g = new THREE.BoxGeometry(12, 0.1, 12);
         var box_m = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var box = new THREE.Mesh(box_g,box_m);
         box.scale.set(0.01,0.01,0.01);
@@ -272,12 +272,12 @@
             laser.scale.y += 0.03;
             laser.scale.z += 0.03;
             laser.rotation.y += 0.05;
-          } else if(box.scale.x >= 1 && box.position.y <= 4){
+          } else if(box.scale.x >= 1 && box.position.y <= 5){
             box.position.y += 0.03;
             box2.position.y -= 0.03;
             laser.scale.y += 0.6;
           }
-          if(box.position.y >= 4){
+          if(box.position.y >= 5){
             scene.add(f_body_w);
           }   
         
