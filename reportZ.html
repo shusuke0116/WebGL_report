@@ -230,47 +230,16 @@
         
         //操作用
         var i = 1;
+        var j = 1;
         
         update();
 
         // 毎フレーム時に実行されるループイベントです
         function update(){
-        /*
-          if(i >= 6){
-          
-            scene.remove(fish);
-          } else if(i >= 3){
-    
-          
-            scene.add(fish);
-          } 
-        */  
-          i += 0.01;
-          
-          if(tab2.scale.y >= 1.9 && parts.scale.x <= 3){
-            if(parts.scale.x == 0.1){
-              scene.add(parts);
-            }
-            parts.scale.x += 0.02;
-            parts.scale.y += 0.01;
-            parts.scale.z += 0.01;
-          }
-            
-             
         
-          /*
-          //羽ばたき
-          if(i % 2 <= 1){
-            wing1.rotation.y -= 0.05;
-            wing2.rotation.y += 0.05;
-            body.position.z += 0.003;
-          } else if(i % 2 >= 0){
-            wing1.rotation.y += 0.05;
-            wing2.rotation.y -= 0.05;
-            body.position.z -= 0.003;
-          }
-          i += 0.05;
-          */
+          i += 0.01;
+          j += 0.01;
+          
           if(f_body_w.scale.x >= 3 && tab.scale.y <= 2){
             if(tab.scale.y == 0.01){
               scene.add(tab);
@@ -289,6 +258,39 @@
             }
             tab2.scale.y += 0.05;
           }
+            
+          if(box.scale.x <= 1 && tab2.scale.y >= 2){
+            box.scale.x += 0.03;
+            box.scale.y += 0.03;
+            box.scale.z += 0.03;
+            box.rotation.y += 0.05;
+            box2.scale.x += 0.03;
+            box2.scale.y += 0.03;
+            box2.scale.z += 0.03;
+            box2.rotation.y += 0.05;
+            laser.scale.x += 0.03;
+            laser.scale.y += 0.03;
+            laser.scale.z += 0.03;
+            laser.rotation.y += 0.05;
+          } else if(box.scale.x >= 1 && box.position.y <= 4){
+            box.position.y += 0.03;
+            box2.position.y -= 0.03;
+            laser.scale.y += 0.6;
+          }
+          if(box.position.y >= 4){
+            scene.add(f_body_w);
+          }   
+        
+          if(j >= 2 && parts.scale.x <= 3){
+            if(parts.scale.x == 0.1){
+              scene.add(parts);
+            }
+            parts.scale.x += 0.02;
+            parts.scale.y += 0.01;
+            parts.scale.z += 0.01;
+          }
+          
+          
           
           
           if(i >= 5 && i <= 7){
@@ -316,30 +318,22 @@
             }
           }
           
-          if(box.scale.x <= 1 && tab2.scale.y >= 2){
-            box.scale.x += 0.03;
-            box.scale.y += 0.03;
-            box.scale.z += 0.03;
-            box.rotation.y += 0.05;
-            box2.scale.x += 0.03;
-            box2.scale.y += 0.03;
-            box2.scale.z += 0.03;
-            box2.rotation.y += 0.05;
-            laser.scale.x += 0.03;
-            laser.scale.y += 0.03;
-            laser.scale.z += 0.03;
-            laser.rotation.y += 0.05;
-          } else if(box.scale.x >= 1 && box.position.y <= 4){
-            box.position.y += 0.03;
-            box2.position.y -= 0.03;
-            laser.scale.y += 0.6;
+          
+          
+          
+          /*
+          //羽ばたき
+          if(i % 2 <= 1){
+            wing1.rotation.y -= 0.05;
+            wing2.rotation.y += 0.05;
+            body.position.z += 0.003;
+          } else if(i % 2 >= 0){
+            wing1.rotation.y += 0.05;
+            wing2.rotation.y -= 0.05;
+            body.position.z -= 0.003;
           }
-          if(box.position.y >= 4){
-            scene.add(f_body_w);
-          }
-          
-          
-          
+          i += 0.05;
+          */
          
           
           // レンダリング
