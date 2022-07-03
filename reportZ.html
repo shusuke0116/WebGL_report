@@ -173,10 +173,10 @@
         parts.scale.set(0.1,0.1,0.1);
         parts.position.set(-0.5,1.6,-3);
         
-        //Shark.png
+        //タブ@Shark.png
         var textureLoader_SH = new THREE.TextureLoader();
         var texture_SH = textureLoader_SH.load("img/Sharkhead.png");
-        var mat_SH = new THREE.MeshPhongMaterial();
+        var mat_SH = new THREE.MeshPhongMaterial({transparent: true, opacity: 0.8});
         mat_SH.map = texture_SH;       
         
         var tab_g = new THREE.PlaneGeometry(2.5, 2);
@@ -186,10 +186,9 @@
         tab.rotation.y = 0.2;
         tab.position.set(-5,1,5);
           
-        //タブ
         var textureLoader_SB = new THREE.TextureLoader();
         var texture_SB = textureLoader_SB.load("img/Sharkback.png");
-        var mat_SB = new THREE.MeshPhongMaterial({transparent: true, opacity: 0.5});
+        var mat_SB = new THREE.MeshPhongMaterial({transparent: true, opacity: 0.8});
         mat_SB.map = texture_SB;       
         
         var tab1 = new THREE.Mesh(tab_g,mat_SB);
@@ -199,7 +198,7 @@
              
         var textureLoader_ST = new THREE.TextureLoader();
         var texture_ST = textureLoader_ST.load("img/Sharkteal.png");
-        var mat_ST = new THREE.MeshPhongMaterial();
+        var mat_ST = new THREE.MeshPhongMaterial({transparent: true, opacity: 0.8});
         mat_ST.map = texture_ST;       
         
         var tab2 = new THREE.Mesh(tab_g,mat_ST);
