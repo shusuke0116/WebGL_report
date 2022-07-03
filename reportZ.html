@@ -32,7 +32,7 @@
 
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(55, width / height);
-        camera.position.set(0, 5, 15);
+        camera.position.set(0, 5, 16);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -197,7 +197,7 @@
         var tab1 = new THREE.Mesh(tab_g,mat_SB);
         tab1.scale.y = 0.01;
         tab1.rotation.x = -0.2;
-        tab1.position.set(0,1,3);
+        tab1.position.set(0,1,5);
        
         
         var textureLoader_ST = new THREE.TextureLoader();
@@ -209,13 +209,13 @@
         tab2.scale.y = 0.01;
         tab2.rotation.x = -0.2;
         tab2.rotation.y = -0.2;
-        tab2.position.set(5,1,3);
+        tab2.position.set(5,1,5);
         
         var box_g = new THREE.BoxGeometry(12, 0.1, 12);
         var box_m = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var box = new THREE.Mesh(box_g,box_m);
         box.scale.set(0.01,0.01,0.01);
-        box.position.set(-1.5,1,-3);
+        box.position.set(-1.5,1,-5);
         
 
         var box2 = new THREE.Mesh(box_g,box_m);
