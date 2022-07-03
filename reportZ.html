@@ -162,7 +162,7 @@
         var mat_b_w = new THREE.MeshBasicMaterial({ color: 0x0000ff ,wireframe: true});
         var f_body_w = new THREE.Mesh( f_body_wg, mat_b_w);
         //f_body_w.castShadow = true;
-        f_body_w.scale.set(3.2,1.6,1.6);
+        f_body_w.scale.set(0.01,0.01,0.01);
         f_body_w.position.set(-0.5,1.6,-3);
         
         
@@ -233,7 +233,7 @@
           i += 0.01;
           j += 0.01;
           
-          if(f_body_w.scale.x >= 3 && tab1.scale.y <= 2){
+          if(i >= 1.1 && tab1.scale.y <= 2){
             if(tab1.scale.y == 0.01){
               scene.add(tab1);
             }
@@ -278,8 +278,13 @@
             } 
           }
           
-          if(box.position.y >= 5){
-            scene.add(f_body_w);
+          if(box.position.y >= 3 && f_body_w.scale.x <= 3.1){
+            if(f_body_w.scale.x <= 0.02){
+              scene.add(f_body_w);
+            }
+            f_body_w.scale.x += 0.02;
+            f_body_w.scale.y += 0.01;
+            f_body_w.scale.z += 0.01;
           }
           
           if(i >= 6 && parts.scale.x <= 3){
