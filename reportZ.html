@@ -180,6 +180,7 @@
         
         var tab_g = new THREE.PlaneGeometry(2.5, 2);
         var tab = new THREE.Mesh(tab_g,mat_SH);
+        tab.castShadow = true; 
         tab.scale.y = 0.01;
         tab.rotation.x = -0.2;
         tab.rotation.y = 0.2;
@@ -191,6 +192,7 @@
         mat_SB.map = texture_SB;       
         
         var tab1 = new THREE.Mesh(tab_g,mat_SB);
+        tab1.castShadow = true; 
         tab1.scale.y = 0.01;
         tab1.rotation.x = -0.2;
         tab1.position.set(0,1,5);
@@ -201,6 +203,7 @@
         mat_ST.map = texture_ST;       
         
         var tab2 = new THREE.Mesh(tab_g,mat_ST);
+        tab2.castShadow = true; 
         tab2.scale.y = 0.01;
         tab2.rotation.x = -0.2;
         tab2.rotation.y = -0.2;
@@ -209,14 +212,17 @@
         var box_g = new THREE.BoxGeometry(12, 0.1, 12);
         var box_m = new THREE.MeshPhongMaterial({ color: 0x0000ff });
         var box = new THREE.Mesh(box_g,box_m);
+        box.castShadow = true; 
         box.scale.set(0.01,0.01,0.01);
         box.position.set(-0.5,1.5,-5);
         
         var box2 = new THREE.Mesh(box_g,box_m);
+        box2.castShadow = true; 
         box2.scale.set(0.01,0.01,0.01);
         box2.position.set(-0.5,1.5,-5);
         
         var laser = new THREE.Mesh(box_g,mat_b_w);
+        laser.castShadow = true; 
         laser.scale.set(0.01,0.01,0.01);
         laser.position.set(-0.5,1.5,-5);
               
