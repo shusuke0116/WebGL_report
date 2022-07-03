@@ -64,12 +64,18 @@
         plane.position.set(0,-3,0);
         scene.add(plane);
         
-        //3dモデル
+        //3dモデル@shark
         const loader = new THREE.GLTFLoader();
         var model;
         
-        
-        
+        //3dモデル@tablet
+        const loader_t = new THREE.GLTFLoader();
+        var model_t;
+        loader_t.load('3dmodel/tablet.glb', (gltf) => {
+            model_t = gltf.scene;
+            model_t.position.set(0,0,-5);
+            scene.add(model_t);
+        });
         
         
         
