@@ -166,7 +166,7 @@
           
         //黒い立体
         var parts_g = new THREE.BoxGeometry(4, 4, 4);
-        var parts_m = new THREE.MeshPhongMaterial({ color: 0xc0c0c0, transparent: true, opacity: 0.9});
+        var parts_m = new THREE.MeshPhongMaterial({ color: 0x0000ff, transparent: true, opacity: 0.95});
         var parts = new THREE.Mesh( parts_g, parts_m);
         parts.scale.set(0.1,0.1,0.1);
         parts.position.set(-0.5,1.6,-3);
@@ -254,7 +254,7 @@
           }
             
           if(i <= 6){
-            if(box.scale.x <= 1 && tab2.scale.y >= 2){
+            if(box.scale.x <= 1 && tab2.scale.y >= 2 && i >= 3){
               if(box.scale.x <= 0.01){
                 scene.add(box);
                 scene.add(box2);
