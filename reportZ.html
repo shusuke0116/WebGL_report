@@ -259,30 +259,32 @@
             tab2.scale.y += 0.05;
           }
             
-          if(box.scale.x <= 1 && tab2.scale.y >= 2){
-            if(box.scale.x <= 0.01){
-              scene.add(box);
-              scene.add(box2);
-              scene.add(laser);
+          if(i <= 5){
+            if(box.scale.x <= 1 && tab2.scale.y >= 2){
+              if(box.scale.x <= 0.01){
+                scene.add(box);
+                scene.add(box2);
+                scene.add(laser);
+              }
+              box.scale.x += 0.03;
+              box.scale.y += 0.03;
+              box.scale.z += 0.03;
+              box.rotation.y += 0.05;
+              box2.scale.x += 0.03;
+              box2.scale.y += 0.03;
+              box2.scale.z += 0.03;
+              box2.rotation.y += 0.05;
+              laser.scale.x += 0.03;
+              laser.scale.y += 0.03;
+              laser.scale.z += 0.03;
+              laser.rotation.y += 0.05;
+            } else if(box.scale.x >= 1 && box.position.y <= 5){
+              box.position.y += 0.03;
+              box2.position.y -= 0.03;
+              laser.scale.y += 0.6;
+            } else if(j >= 5 && j <= 6){
+              scene.add(f_body_w);
             }
-            box.scale.x += 0.03;
-            box.scale.y += 0.03;
-            box.scale.z += 0.03;
-            box.rotation.y += 0.05;
-            box2.scale.x += 0.03;
-            box2.scale.y += 0.03;
-            box2.scale.z += 0.03;
-            box2.rotation.y += 0.05;
-            laser.scale.x += 0.03;
-            laser.scale.y += 0.03;
-            laser.scale.z += 0.03;
-            laser.rotation.y += 0.05;
-          } else if(box.scale.x >= 1 && box.position.y <= 5){
-            box.position.y += 0.03;
-            box2.position.y -= 0.03;
-            laser.scale.y += 0.6;
-          } else if(j >= 5 && j <= 6){
-            scene.add(f_body_w);
           }
           
           if(j >= 3 && parts.scale.x <= 3){
