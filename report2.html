@@ -56,42 +56,49 @@
     var geometry = new THREE.BoxGeometry(0.3, 0.3, 0.3);
     var material = new THREE.MeshPhongMaterial({ color: 0x0000ff });
     var box = new THREE.Mesh(geometry, material);
-    box.position.set(0.6,0.3,0); //位置を指定
+    box.position.set(0,-1,-9); //位置を指定
     scene.add(box);   // シーンに追加
     
     //角錐
     var coneGeometry = new THREE.ConeGeometry(0.5,1, 3);
     var coneMaterial = new THREE. MeshBasicMaterial({color:0x6699ff});
     var cone = new THREE.Mesh(coneGeometry,coneMaterial);
-    cone.position.set(-1,0,0);
+    cone.position.set(0,-1,-9);
     scene.add(cone);
 
     //角柱
     var cylinderGeometry = new THREE.CylinderGeometry(0.3,0.5,1,8);
     var cylinderMaterial = new THREE.MeshPhongMaterial({color:0xffffff});
     var cylinder = new THREE.Mesh(cylinderGeometry,cylinderMaterial);
-    cylinder.position.set(-1,-2,-5);
+    cylinder.position.set(0,-1,-9);
     scene.add(cylinder);
 
     //球
     var sphereGeometry = new THREE.SphereGeometry(0.5,32,32); 
     var sphereMaterial = new THREE. MeshLambertMaterial({color:0xff6600});
     var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
-    sphere.position.set(0,1.5,0);
+    sphere.position.set(0,-1,-9);
     scene.add(sphere);
 
+    
     //ドーナッツ
-    var torusGeometry1 = new THREE.TorusGeometry(0.5,0.1,12,12); 
+    var torusGeometry1 = new THREE.TorusGeometry(1,0.1,12,12); 
     var torusMaterial = new THREE. MeshPhongMaterial({color:0x0000ff});
     var torus1 = new THREE.Mesh(torusGeometry1,torusMaterial);
-    torus1.position.set(0,1.5,0);
+    torus1.position.set(0,-1,-9);
     scene.add(torus1);
 
-    var torusGeometry2 = new THREE.TorusGeometry(0.5,0.1,12,12); 
+    var torusGeometry2 = new THREE.TorusGeometry(1,0.1,12,12); 
     var torusMaterial = new THREE. MeshPhongMaterial({color:0x0000ff,wireframe:true});
     var torus2 = new THREE.Mesh(torusGeometry2,torusMaterial);
-    torus2.position.set(0,1.5,0);
+    torus2.position.set(0,-1,-9);
     scene.add(torus2);
+
+    //円２
+    var sphere1 = new THREE.Mesh(sphereGeometry,torusMaterial);
+    sphere1.position.set(0,-1,-9);
+    scene.add(sphere1);
+
 
     //クネクネ
     var torusKnotGeometry = new THREE.TorusKnotGeometry(1.5,0.3,20,6,5,2); 
@@ -100,6 +107,11 @@
     torusKnot.position.set(0,-1,-10);
     scene.add( torusKnot );
 
+    var torusKnot1 = new THREE.Mesh(torusKnotGeometry,material);
+    torusKnot1.position.set(0,-1,-9);
+    torusKnot1.scale.set(0.2,0.2,0.2);
+    scene.add( torusKnot1 );
+
     // 初回実行
     var update = function() {
       requestAnimationFrame(update);
@@ -107,20 +119,56 @@
       // 箱を回転させる boxがないのにここにあるとエラー
       box.rotation.x += 0.01;
       box.rotation.y += 0.01;
+      box.position.x -= 0.03;
+      box.position.y += 0.01;
+      box.position.z += 0.02;
+      if(box.position.x <= -10){
+        box.position.set(0,-1,-9);
+      }
       
       cone.rotation.x += 0.1;
       cone.rotation.y += 0.1;
+      cone.position.x -= 0.05;
+      cone.position.y -= 0.05;
+      cone.position.z += 0.02;
+      if(cone.position.x <= -10){
+        cone.position.set(0,-1,-9);
+      }
 
-      //cylinder.rotation.x += 0.01;
-      //cylinder.rotation.y += 0.01;
-
-      //sphere.rotation.y += 0.01;
-
+      sphere.rotation.y += 0.01;
+      sphere.position.x -= 0.02;
       torus1.rotation.x += 0.01;
       torus1.rotation.y -= 0.01;
-
+      torus1.position.x -= 0.02;
       torus2.rotation.x -= 0.02;
-      //torus2.rotation.y -= 0.01;
+      torus2.position.x -= 0.02;
+      if(sphere.position.x <= -15){
+        sphere.position.set(0,-1,-9);
+        torus1.position.set(0,-1,-9);
+        torus2.position.set(0,-1,-9);
+      }
+
+      sphere1.rotation.y += 0.01;
+      sphere1.position.x -= 0.04;
+      sphere1.position.z += 0.02;
+      if(sphere1.position.x <= -15){
+        sphere1.position.set(0,-1,-9);
+      }
+    
+      cylinder.rotation.x += 0.01;
+      cylinder.rotation.y += 0.01;
+      cylinder.position.x -= 0.01;
+      cylinder.position.y -= 0.02;
+      if(cylinder.position.x <= -10){
+        cylinder.position.set(0,-1,-9);
+      }
+
+      torusKnot1.rotation.z += 0.03;
+      torusKnot1.position.x -= 0.01;
+      torusKnot1.position.y -= 0.05;
+      if(torusKnot1.position.y <= -10){
+        torusKnot1.position.set(0,-1,-9);
+      }
   
       renderer.render(scene, camera);
     };
