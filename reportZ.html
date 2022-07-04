@@ -315,7 +315,8 @@
                 model = gltf.scene;
                 model.traverse((model) => { 
                   model.castShadow = true; 
-                  model.receiveShadow = true;  
+                  model.receiveShadow = true;
+                  model.wireframe = true;
                 });
                 model.scale.set(4,4,4);
                 model.position.set(1,2,-3);
