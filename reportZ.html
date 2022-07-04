@@ -168,7 +168,7 @@
         var parts_g = new THREE.SphereGeometry( 1.5, 32, 32 );
         var parts_m = new THREE.MeshPhongMaterial({ color: 0x000000, wireframe: true ,transparent: true, opacity: 0.95});
         var parts = new THREE.Mesh( parts_g, parts_m);
-        parts.rotation.y = -0.5;
+       
         parts.scale.set(0.1,0.1,0.1);
         parts.position.set(-0.5,1.6,-3);
         
@@ -288,16 +288,11 @@
           if(i >= 5 && parts.scale.x <= 3){
             if(parts.scale.x == 0.1){
               scene.add(parts);
-            }
-            if(parts.scale.x <= 1.6){
-              parts.scale.x += 0.01;
-              parts.scale.y += 0.01;
-              parts.scale.z += 0.01;
-              parts.rotation.y += 0.05;
-            } else{
-              parts.scale.x += 0.01;
-              
-            }
+            }            
+            parts.scale.x += 0.01;
+            parts.scale.y += 0.01;
+            parts.scale.z += 0.01;
+            parts.rotation.y += 0.05;                                   
           }
           
           if(i >= 4){
