@@ -165,7 +165,7 @@
         f_body_w.position.set(-0.5,1.6,-3);
           
         //黒い立体
-        var parts_g = THREE.SphereGeometry( 1.5, 32, 32 );
+        var parts_g = new THREE.SphereGeometry( 1.5, 32, 32 );
         var parts_m = new THREE.MeshPhongMaterial({ color: 0x000000, wireframe: true ,transparent: true, opacity: 0.95});
         var parts = new THREE.Mesh( parts_g, parts_m);
         parts.scale.set(0.1,0.1,0.1);
