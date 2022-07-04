@@ -232,7 +232,7 @@
         var boxb = new THREE.Mesh(box_bg,box_bm);
         boxb.castShadow = true; 
         boxb.scale.set(0.01,0.01,0.01);
-        boxb.position.set(-0.5,5,-5);
+        boxb.position.set(-0.5,4.5,-5);
               
         //操作用
         var i = 1;
@@ -323,7 +323,7 @@
             }
           }
           
-          if(boxb.position.y <= 2){
+          if(boxb.position.y <= 2.5){
             loader.load('3dmodel/Shark.glb', (gltf) => {
               model = gltf.scene;
               model.traverse((model) => { 
