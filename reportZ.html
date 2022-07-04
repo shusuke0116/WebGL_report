@@ -92,7 +92,6 @@
         
         
         //蝶
-        /*
         //体
         var body_g = new THREE.SphereGeometry( 0.15, 32, 32 );
         var mat_w = new THREE.MeshPhongMaterial({ color: 0xffffff });
@@ -145,7 +144,7 @@
         butterfly.rotation.x = 0.7;
         butterfly.scale.set(0.5,0.5,0.5);
         scene.add(butterfly);
-        */
+        
         
         
         
@@ -260,7 +259,7 @@
               
         //操作用
         var i = 1;
-        var j = 1;
+        var x = 1;
         
         update();
 
@@ -413,19 +412,19 @@
           
           
           
-          /*
+          
           //羽ばたき
-          if(i % 2 <= 1){
+          if(x % 2 <= 1){
             wing1.rotation.y -= 0.05;
             wing2.rotation.y += 0.05;
             body.position.z += 0.003;
-          } else if(i % 2 >= 0){
+          } else if(x % 2 >= 0){
             wing1.rotation.y += 0.05;
             wing2.rotation.y -= 0.05;
             body.position.z -= 0.003;
           }
-          i += 0.05;
-          */
+          x += 0.05;
+          
          
           i += 0.01;
           
