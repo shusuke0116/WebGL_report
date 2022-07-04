@@ -73,18 +73,7 @@
         var texture2 = textureLoader2.load("img/blackstar.png");
         const material = new THREE.SpriteMaterial({ map: texture2,});
 　　　　
-        //星をループで生成
-        for (let j = 0; j < 10; j++) {
-           const sprite = new THREE.Sprite(material);
-           // ランダムな座標に配置
-           sprite.position.x = 3.8 * (Math.random() - 0.5);
-           sprite.position.y = 1.5 * Math.random();
-           sprite.position.z = 4 * (Math.random() - 0.5);
-           // スケールを調整
-           sprite.scale.set(0.5, 0.5, 0.5);
-
-           scene.add(sprite);
-        }
+        
         
         
         
@@ -385,9 +374,6 @@
                 sprite.position.x = 3.8 * (Math.random() - 0.5);
                 sprite.position.y = 1.5 * Math.random();
                 sprite.position.z = 4 * (Math.random() - 0.5);
-                // スケールを調整
-                sprite.scale.set(0.5, 0.5, 0.5);
-
                 scene.add(sprite);
               }
             }
