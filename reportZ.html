@@ -44,17 +44,17 @@
         scene.add(directionalLight1);
         
         
-        /*
-        // ラピスラズリ読み込み
+        
+        // 箱の柄読み込み
         var textureLoader1 = new THREE.TextureLoader();
-        var texture1 = textureLoader1.load("img/mizuiro.jpg");
+        var texture1 = textureLoader1.load("img/box_p.jpg");
         var mat_lapis = new THREE.MeshPhongMaterial();
         mat_lapis.map = texture1;       
         // バンプマップ読み込み
-        var bump1 = textureLoader1.load("img/mizuiro.jpg");
+        var bump1 = textureLoader1.load("img/box_p.jpg");
         mat_lapis.bumpMap = bump1;
         //mat_lapis.bumpscale = 0.4;
-        */
+        
         //床
         var planeGeometry = new THREE.PlaneGeometry(50,50);
         var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
@@ -224,13 +224,13 @@
         tab2.position.set(5,1,5);
         
         var box_g = new THREE.BoxGeometry(12, 0.1, 12);
-        var box_m = new THREE.MeshPhongMaterial({ color: 0x0000ff });
-        var box = new THREE.Mesh(box_g,box_m);
+        //var box_m = new THREE.MeshPhongMaterial({ color: 0x0000ff });
+        var box = new THREE.Mesh(box_g,mat_lapis);
         box.castShadow = true; 
         box.scale.set(0.01,0.01,0.01);
         box.position.set(-0.5,1.5,-5);
         
-        var box2 = new THREE.Mesh(box_g,box_m);
+        var box2 = new THREE.Mesh(box_g,mat_lapis);
         box2.castShadow = true; 
         box2.scale.set(0.01,0.01,0.01);
         box2.position.set(-0.5,1.5,-5);
