@@ -53,7 +53,7 @@
         // バンプマップ読み込み
         var bump1 = textureLoader1.load("img/box_p.jpg");
         mat_lapis.bumpMap = bump1;
-        //mat_lapis.bumpscale = 0.4;
+        mat_lapis.bumpscale = 0.4;
         
         //床
         var planeGeometry = new THREE.PlaneGeometry(50,50);
@@ -80,7 +80,7 @@
            shstar[j].position.x = 4 * (Math.random() - 0.5);
            shstar[j].position.y = 1.5 * Math.random();
            shstar[j].position.z = 4 * (Math.random() - 0.5);
-           shstar[j].scale.set(0.1, 0.1, 0.1);
+           //shstar[j].scale.set(0.1, 0.1, 0.1);
            
         }
         
