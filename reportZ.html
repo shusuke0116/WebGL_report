@@ -246,9 +246,14 @@
         laser.position.set(-0.5,1.5,-5);
         
         //黒い箱
+        var textureLoader_b = new THREE.TextureLoader();
+        var texture_b = textureLoader_b.load("img/laser_p.jpg");
+        var mat_b = new THREE.MeshPhongMaterial();
+        mat_b.map = texture_b;
+        
         var box_bg = new THREE.BoxGeometry(12, 3, 12);
-        var box_bm = new THREE.MeshPhongMaterial({ color: 0x000000,transparent: true, opacity: 0.95});
-        var boxb = new THREE.Mesh(box_bg,box_bm);
+        //var box_bm = new THREE.MeshPhongMaterial({ color: 0x000000,transparent: true, opacity: 0.95});
+        var boxb = new THREE.Mesh(box_bg,mat_b);
         boxb.castShadow = true; 
         boxb.scale.set(0.01,0.01,0.01);
         boxb.position.set(-0.5,4.5,-5);
