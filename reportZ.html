@@ -73,7 +73,16 @@
         var texture2 = textureLoader2.load("img/blackstar.png");
         const material = new THREE.SpriteMaterial({ map: texture2,});
 　　　　
-        
+        var shstar = new Array(10);
+        for (let j = 0; j < 10; j++){
+           var star = new THREE.Sprite(material);
+           shstar[j] = star;
+           shstar[j].position.x = 4 * (Math.random() - 0.5);
+           shstar[j].position.y = 1.5 * Math.random();
+           shstar[j].position.z = 4 * (Math.random() - 0.5);
+           shstar[j].scale.set(0.1, 0.1, 0.1);
+           
+        }
         
         
         
@@ -366,7 +375,11 @@
                 scene.remove(parts);  
               } 
             }
-            
+            if(i >= 10){
+              for (let j = 0; j < 10; j++){
+                scene.add(shstar[j]);
+              }
+            }
             if(i >= 11){
               if(box.scale.x >= 0.1 && parts.scale.y <= 0.2){
                 box.scale.x -= 0.03;
