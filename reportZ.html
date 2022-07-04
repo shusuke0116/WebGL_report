@@ -290,11 +290,11 @@
             f_body_w.scale.z += 0.02;
           }
           
-          if(i >= 5 && parts.scale.x <= 2){
+          if(i >= 5 && parts.scale.x <= 1){
             if(parts.scale.x == 0.1){
               scene.add(parts);
             }
-            parts.scale.x += 0.02;
+            parts.scale.x += 0.01;
             parts.scale.y += 0.01;
             parts.scale.z += 0.01;
           }
@@ -312,6 +312,17 @@
           
           
           if(i >= 5 && i <= 17){
+            if(i >= 8){
+              parts.scale.x += 0.07;
+              parts.scale.y += 0.07;
+              parts.scale.z += 0.07;
+            
+              if(parts.scale.y >= 10){        
+                scene.remove(f_body_w);
+                scene.remove(laser);
+                scene.remove(parts);  
+              } 
+            }
             if(i >= 9){
               loader.load('3dmodel/Shark.glb', (gltf) => {
                 model = gltf.scene;
@@ -324,16 +335,6 @@
                 scene.add(model);
               });
               
-              parts.scale.x += 0.07;
-              parts.scale.y += 0.07;
-              parts.scale.z += 0.07;
-            
-              if(parts.scale.y >= 10){
-                
-                scene.remove(f_body_w);
-                scene.remove(laser);
-                scene.remove(parts);  
-              } 
             }
             if(i >= 10){
               if(box.scale.x >= 0.1 && parts.scale.y <= 0.2){
