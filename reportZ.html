@@ -56,9 +56,14 @@
         mat_lapis.bumpscale = 0.2;
         
         //床
+        var textureLoader_y = new THREE.TextureLoader();
+        var texture_y = textureLoader_y.load("img/yuka.png");
+        var mat_y = new THREE.MeshPhongMaterial();
+        mat_y.map = texture_y;       
+        
         var planeGeometry = new THREE.PlaneGeometry(50,50);
-        var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
-        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        //var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
+        var plane = new THREE.Mesh(planeGeometry,mat_y);
         plane.receiveShadow = true;   //影
         plane.rotation.set( -Math.PI/2, 0, 0 );
         plane.position.set(0,-5,0);
