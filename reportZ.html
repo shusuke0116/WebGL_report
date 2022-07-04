@@ -164,13 +164,13 @@
         f_body_w.scale.set(0.01,0.01,0.01);
         f_body_w.position.set(-0.5,1.6,-3);
           
-        //黒い立体
+        //黒い円
         var parts_g = new THREE.SphereGeometry( 1.5, 32, 32 );
         var parts_m = new THREE.MeshPhongMaterial({ color: 0x000000, wireframe: true ,transparent: true, opacity: 0.95});
-        var parts = new THREE.Mesh( parts_g, parts_m);
-       
+        var parts = new THREE.Mesh( parts_g, parts_m);       
         parts.scale.set(0.1,0.1,0.1);
         parts.position.set(-0.5,1.6,-3);
+        
         
         //タブ@Shark.png
         var textureLoader_SH = new THREE.TextureLoader();
@@ -225,6 +225,13 @@
         laser.castShadow = true; 
         laser.scale.set(0.01,0.01,0.01);
         laser.position.set(-0.5,1.5,-5);
+        
+        //黒い箱
+        var box_bm = new THREE.MeshPhongMaterial({ color: 0x000000,transparent: true, opacity: 0.95});
+        var boxb = new THREE.Mesh(box_g,box_bm);
+        boxb.castShadow = true; 
+        boxb.scale.set(0.01,0.01,0.01);
+        boxb.position.set(-0.5,4.5,-5);
               
         //操作用
         var i = 1;
@@ -293,6 +300,26 @@
             parts.scale.y += 0.01;
             parts.scale.z += 0.01;
             parts.rotation.y += 0.05;                                   
+          }
+          if(parts.scale.x >= 3 && boxb.scale.x <= 3){
+            if(boxb.scale.x == 0.01){
+              scene.add(boxb);
+            }
+            boxb.scale.x += 0.03;
+            boxb.scale.y += 0.03;
+            boxb.scale.z += 0.03;
+          }
+          if(boxb.scale.x <= 3){
+            if(boxb.position.y >= -3){
+              boxb.position.y -= 0.05;
+            } else{
+              boxb.scale.x -= 0.03;
+              boxb.scale.y -= 0.03;
+              boxb.scale.z -= 0.03;
+              if(boxb.scale.x <= 0.11){
+                scene.remove(boxb);
+              }
+            }
           }
           
           if(i >= 4){
