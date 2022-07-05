@@ -197,6 +197,19 @@
 
         // 毎フレーム時に実行されるループイベントです
         function update() {
+          //羽ばたき
+          if(x % 2 <= 1){
+            wing1.rotation.y -= 0.05;
+            wing2.rotation.y += 0.05;
+            body.position.z += 0.003;
+          } else if(x % 2 >= 0){
+            wing1.rotation.y += 0.05;
+            wing2.rotation.y -= 0.05;
+            body.position.z -= 0.003;
+          }
+          x += 0.05;
+          
+          
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
