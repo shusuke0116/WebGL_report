@@ -85,6 +85,8 @@
         var texture2 = textureLoader2.load("img/sharkmozi.png");
         const material = new THREE.SpriteMaterial({ map: texture2,});
 　　　　var mozi = new THREE.Sprite(material);
+        mozi.scale.set(0.01,0.01,0.01);
+        mozi.position.set(0,7,0);
       
         //ワイヤーフレーム
         var f_body_wg = new THREE.SphereGeometry( 2, 32, 32 );
@@ -171,7 +173,7 @@
               
         //操作用
         var i = 1;
-        
+        var a = 1;
         update();
 
         // 毎フレーム時に実行されるループイベントです
@@ -317,11 +319,19 @@
               } else if(box.scale.x <= 0.1 && i >= 6){
                 scene.remove(box);
                 scene.remove(box2);
-                
+                a += 1;
               }
             }
           }
-            
+          
+          if(a >= 1.9 && mozi.scale.x <= 3){
+            if(mozi.scale.x == 0.01){
+              scene.add(mozi);
+            }
+            mozi.scale.x += 0.1;
+            mozi.scale.y += 0.1;
+            mozi.scale.z += 0.1;
+          }
          
           i += 0.01;
           
