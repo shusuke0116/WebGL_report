@@ -72,30 +72,7 @@
         plane.position.set(0,-5,-3);
         scene.add(plane);
         
-        //壁
-        var textureLoader_ka = new THREE.TextureLoader();
-        var texture_ka = textureLoader_ka.load("img/konkuri.jpg");
-        var mat_ka = new THREE.MeshPhongMaterial();
-        mat_ka.map = texture_ka;  
         
-        var kabe_g = new THREE.BoxGeometry(35, 1, 35);
-        var plane1 = new THREE.Mesh(kabe_g,mat_ka);
-        plane1.receiveShadow = true;  
-        plane1.rotation.set( -Math.PI/2, 0, 1.6);
-        plane1.position.set(-17,-1,-5);
-        scene.add(plane1);
-        
-        var plane2 = new THREE.Mesh(kabe_g,mat_ka);
-        plane2.receiveShadow = true;  
-        plane2.rotation.set( -Math.PI/2,0, -1.6);
-        plane2.position.set(17,-1,-5);
-        scene.add(plane2);
-        
-        var plane3 = new THREE.Mesh(kabe_g,mat_ka);
-        plane3.receiveShadow = true;  
-        plane3.rotation.set( 1.6, 0, 0 );
-        plane3.position.set(0,-1,-15);
-        scene.add(plane3);
         
         
         //3dモデル@shark
