@@ -79,26 +79,13 @@
         const loader = new THREE.GLTFLoader();
         var model;
         
-        /*
+        
         // 星をスプライトで作成
         var textureLoader2 = new THREE.TextureLoader();  
-        var texture2 = textureLoader2.load("img/blackstar.png");
+        var texture2 = textureLoader2.load("img/sharkmozi.png");
         const material = new THREE.SpriteMaterial({ map: texture2,});
-　　　　
-        var shstar = new Array(10);
-        for (let j = 0; j < 10; j++){
-           var star = new THREE.Sprite(material);
-           shstar[j] = star;
-           shstar[j].position.x = 4 * (Math.random() - 0.5);
-           shstar[j].position.y = 1.5 * Math.random();
-           shstar[j].position.z = 4 * (Math.random() - 0.5);
-           //shstar[j].scale.set(0.1, 0.1, 0.1);
-           
-        }
-        */
-        
-        
-        
+　　　　var mozi = new THREE.Sprite(material);
+      
         //ワイヤーフレーム
         var f_body_wg = new THREE.SphereGeometry( 2, 32, 32 );
         var mat_b_w = new THREE.MeshBasicMaterial({ color: 0x0000ff ,wireframe: true});
