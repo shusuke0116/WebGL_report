@@ -76,6 +76,7 @@
         const loader = new THREE.GLTFLoader();
         var model;
         
+        /*
         // 星をスプライトで作成
         var textureLoader2 = new THREE.TextureLoader();  
         var texture2 = textureLoader2.load("img/blackstar.png");
@@ -91,7 +92,7 @@
            //shstar[j].scale.set(0.1, 0.1, 0.1);
            
         }
-        
+        */
         
         
         //蝶
@@ -387,11 +388,13 @@
                 scene.remove(parts);  
               } 
             }
+            /*
             if(i >= 10){
               for (let j = 0; j < 10; j++){
                 scene.add(shstar[j]);
               }
             }
+            */
             if(i >= 11){
               if(box.scale.x >= 0.1 && parts.scale.y <= 0.2){
                 box.scale.x -= 0.03;
