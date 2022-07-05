@@ -8,6 +8,7 @@
 <body>
   <h1>テクスチャーマップ</h1> 
   本課題:図形にテクスチャーを貼り、バンプマップを作成すること<br>
+  これを考慮し、草原に立つ塔を作成した。床や建物のパーツそれぞれにテクスチャを貼っている。<br>
  <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -182,7 +183,7 @@
         butterfly.add(wing1);
         butterfly.add(wing2);
         butterfly.add(body);
-        butterfly.position.set(-2,0,0);
+        butterfly.position.set(2,0,0);
         butterfly.rotation.x = 0.7;
         butterfly.scale.set(0.8,0.8,0.8);
         scene.add(butterfly);
