@@ -72,7 +72,7 @@
         plane.position.set(0,-5,-3);
         scene.add(plane);
         
-        //
+        //壁
         var textureLoader_ka = new THREE.TextureLoader();
         var texture_ka = textureLoader_ka.load("img/konkuri.jpg");
         var mat_ka = new THREE.MeshPhongMaterial();
@@ -80,7 +80,7 @@
         
         var plane1 = new THREE.Mesh(planeGeometry,mat_ka);
         plane1.receiveShadow = true;   //影
-        plane1.rotation.set( -Math.PI/2, 0.4, 0 );
+        plane1.rotation.set( -Math.PI/2, 1, 0 );
         plane1.position.set(0,-3,-6);
         scene.add(plane1);
         
