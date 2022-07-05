@@ -64,7 +64,7 @@
         var mat_y = new THREE.MeshPhongMaterial();
         mat_y.map = texture_y;       
         
-        var planeGeometry = new THREE.PlaneGeometry(50,50);
+        var planeGeometry = new THREE.PlaneGeometry(40,40);
         //var planeMaterial = new THREE.MeshPhongMaterial({ color: 0xc0c0c0 });
         var plane = new THREE.Mesh(planeGeometry,mat_y);
         plane.receiveShadow = true;   //影
@@ -80,8 +80,8 @@
         
         var plane1 = new THREE.Mesh(planeGeometry,mat_ka);
         plane1.receiveShadow = true;   //影
-        plane1.rotation.set( -Math.PI/2, 1.5, 0 );
-        plane1.position.set(-5,-3,-5);
+        plane1.rotation.set( -Math.PI/2, 1.6, 0 );
+        plane1.position.set(-8,-3,-5);
         scene.add(plane1);
         
         
