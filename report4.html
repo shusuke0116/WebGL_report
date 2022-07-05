@@ -130,7 +130,9 @@
         var texture_p = textureLoader_p.load("img/ageha.jpg");
         var mat_p = new THREE.MeshPhongMaterial();
         mat_p.map = texture_p;
-        
+        var bump_p = textureLoader_p.load("img/ageha.jpg");
+        mat_p.bumpMap = bump_p;
+        mat_p.bumpscale = 0.4;
         //体
         var body_g = new THREE.SphereGeometry( 0.15, 32, 32 );
         //var mat_w = new THREE.MeshPhongMaterial({ color: 0xffffff });
