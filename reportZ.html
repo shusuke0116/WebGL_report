@@ -79,11 +79,24 @@
         mat_ka.map = texture_ka;  
         
         var plane1 = new THREE.Mesh(planeGeometry,mat_ka);
-        plane1.receiveShadow = true;   //影
+        plane1.receiveShadow = true;  
         plane1.rotation.set( -Math.PI/2, 1.6, 0 );
-        plane1.position.set(-8,-3,-5);
+        plane1.position.set(-15,-3,-5);
         scene.add(plane1);
         
+        var plane2 = new THREE.Mesh(planeGeometry,mat_ka);
+        plane2.receiveShadow = true;  
+        plane2.rotation.set( -Math.PI/2, -1.6, 0 );
+        plane2.position.set(15,-3,-5);
+        scene.add(plane2);
+        
+        /*
+        var plane3 = new THREE.Mesh(planeGeometry,mat_ka);
+        plane3.receiveShadow = true;  
+        plane3.rotation.set( -Math.PI/2, 1.6, 0 );
+        plane3.position.set(-15,-3,-5);
+        scene.add(plane3);
+        */
         
         //3dモデル@shark
         const loader = new THREE.GLTFLoader();
