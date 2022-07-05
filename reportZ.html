@@ -78,7 +78,7 @@
         var mat_ka = new THREE.MeshPhongMaterial();
         mat_ka.map = texture_ka;  
         
-        var kabe_g = new THREE.BoxGeometry(35, 0.1, 35);
+        var kabe_g = new THREE.BoxGeometry(35, 1, 35);
         var plane1 = new THREE.Mesh(kabe_g,mat_ka);
         plane1.receiveShadow = true;  
         plane1.rotation.set( -Math.PI/2, 0, 1.6);
